@@ -18,19 +18,25 @@ export class ProfileService {
 
   // addProfileData(email: string, uid: string, name: string, nameProyect: string, workItem: string) {
 
-  addProfileData(email: string, uid: string) {
+  addProfileAuth(email: string, name: string, nameProyect: string, workItem: string) {
     const data: IProfile = {
       email: email,
       date: new Date().toISOString(),
-      uid: uid,
-      name: null,
-      nameProyect: null,
+      uid: null,
+      name: name,
+      nameProyect: nameProyect,
       photo: null,
-      workItem: null,
+      workItem: workItem,
       address: null,
       areasInterest: null
     }
     return this.ProfileDataCollection.add(data);
   }
 
+  addUid(uid: string) {
+    const data: any = {
+      uid: uid
+    }
+    return this.ProfileDataCollection.add(data);
+  }
 }

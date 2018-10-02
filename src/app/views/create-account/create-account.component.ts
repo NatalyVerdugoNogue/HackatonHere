@@ -12,11 +12,6 @@ export class CreateAccountComponent implements OnInit {
 
   createAccountForm: FormGroup;
 
-  PreProfileForm:any={
-    name
-  }
-
-
   constructor(private formBuilder: FormBuilder, private signupFirebase: AuthService, private addProfileFirestore: ProfileService) {
     this.createCreateAccountForm();
   }
@@ -34,34 +29,24 @@ export class CreateAccountComponent implements OnInit {
     });
   }
 
-
   onRegister() {
+    this.addProfileFirestore.addProfileAuth(
+      this.createAccountForm.value.email,
+      this.createAccountForm.value.name,
+      this.createAccountForm.value.nameProyect,
+      this.createAccountForm.value.workItem);
+
     this.signupFirebase.signup(this.createAccountForm.value.email,
       this.createAccountForm.value.password)
-      .then(infoAuth => {
-        console.log(this.createAccountForm.value.name,
-          this.createAccountForm.value.nameProyect,
-          this.createAccountForm.value.workItem);
-        this.addProfileFirestore.addProfileData
-          (infoAuth.user.email,
-          infoAuth.user.uid)
-
-
-          .then(infoFS => {
-            console.log('OK FS');
-
-            // routing a muro
-          }
-          ).catch(
-            error => {
-              console.log("No se creo el perfil correctamente", error);
-            }
-          )
-      })
-      .catch(error => {
-        // routing volver a crear cuenta
-        console.log(error);
-      });
+      .then((info) => {
+        this.addProfileFirestore.addUid(info.user.uid)
+        // routing a muro
+      }
+      ).catch(
+        error => {
+          console.log("No se creo el perfil correctamente", error);
+        }
+      )
     this.createAccountForm.reset();
   }
 }
