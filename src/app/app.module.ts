@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+// componentes
 import { AppComponent } from './app.component';
 import { IntroComponent } from './views/intro/intro.component';
 import { LoginComponent } from './views/login/login.component';
@@ -16,6 +18,14 @@ import { YourEventsComponent } from './popUp/your-events/your-events.component';
 import { YourPlaceComponent } from './popUp/your-place/your-place.component';
 import { UploadPhotoComponent } from './popUp/upload-photo/upload-photo.component';
 import { EditProfileComponent } from './popUp/edit-profile/edit-profile.component';
+
+// Firebase
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -36,9 +46,15 @@ import { EditProfileComponent } from './popUp/edit-profile/edit-profile.componen
     EditProfileComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

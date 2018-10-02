@@ -11,5 +11,24 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+  // onLogin() {
+  //   this.signupFirebase.login(this.createAccountForm.value.email,
+  //     this.createAccountForm.value.password)
+  //     .then(() => {
 
+  //     })
+  //     .catch(() => {
+
+  //     })
+  // }
+
+  // onLogout() {
+  //   this.signupFirebase.logout()
+  //     .then(() => {
+
+  //     })
+  //     .catch(() => {
+
+  //     })
+  // }
 }
