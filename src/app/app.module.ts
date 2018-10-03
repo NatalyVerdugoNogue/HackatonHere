@@ -29,6 +29,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthService } from './services/auth.service';
 import { CreateAccountNameWorkComponent } from './popUp/create-account-name-work/create-account-name-work.component';
 import {EventService} from './services/event.service';
+import { CheckDataComponent } from './popUp/check-data/check-data.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import {EventService} from './services/event.service';
     YourPlaceComponent,
     UploadPhotoComponent,
     EditProfileComponent,
-    CreateAccountNameWorkComponent
+    CreateAccountNameWorkComponent,
+    CheckDataComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { FormControl, FormGroup, Validators} from "@angular/forms";
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { AngularFireDatabase } from "@angular/fire/database";
+import { AngularFireList } from "@angular/fire/database";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class EventService {
 
   form = new FormGroup({
     $key: new FormControl(null),
-    nombreEvento: new FormControl('', Validators.required ),
+    nombreEvento: new FormControl('', Validators.required),
     lugar: new FormControl('', Validators.required),
     fecha: new FormControl('', Validators.required),
     horario: new FormControl('', Validators.required),

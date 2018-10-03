@@ -12,6 +12,7 @@ export class ProfileService {
 
   private ProfileDataCollection: AngularFirestoreCollection<IProfile>
   ProfileData: Observable<IProfile[]>;
+  InfoProfile: Observable<any>
 
   constructor(public afs: AngularFirestore) {
     this.ProfileDataCollection = afs.collection<IProfile>('ProfileData');
@@ -42,11 +43,20 @@ export class ProfileService {
     console.log('data addprof', data);
 
 
-    this.afs.collection<IProfile>('ProfileData').valueChanges();
+    this.ProfileDataCollection.doc(uid).set(data)
   }
 
 
-  getInfoProfile(uid: string) {
-    return this.ProfileDataCollection.doc(uid).get()
+  getInfoProfile() {
+    this.ProfileDataCollection = this.afs.collection('ProfileData');
+    this.InfoProfile = this.ProfileDataCollection.valueChanges();
+    return this.InfoProfile;
   }
+
+  addNameWork(info: string, uid: string) {
+    this.afs.collection('ProfileData').doc(uid).update({
+      nameWork: info
+    })
+  }
+
 }
