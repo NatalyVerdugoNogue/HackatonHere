@@ -20,7 +20,7 @@ export class EventService {
     fecha: new FormControl('', Validators.required),
     horario: new FormControl('', Validators.required),
     descripcion: new FormControl('', Validators.required),
-    asistire: new FormControl(false),
+    asistire: new FormControl(''),
     favorite: new FormControl(false),
   });
 
