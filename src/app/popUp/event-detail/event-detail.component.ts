@@ -7,6 +7,7 @@ import { EventService } from '../../services/event.service';
   templateUrl: './event-detail.component.html',
   styleUrls: ['./event-detail.component.css']
 })
+
 export class EventDetailComponent implements OnInit {
 
   constructor(private eventService: EventService) { }
@@ -36,5 +37,10 @@ export class EventDetailComponent implements OnInit {
 
   filterCondition(evento) {
     return evento.nombreEvento.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1;
+  }
+
+  addFavorite(key, favorite){
+    favorite = true;
+    this.eventService.updateData('evento/' + key, { favorite: favorite })
   }
 }
