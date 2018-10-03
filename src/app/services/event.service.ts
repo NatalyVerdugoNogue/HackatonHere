@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators} from "@angular/forms";
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { AngularFireDatabase} from 'angularfire2/database';
+import { AngularFireList } from '@angular/fire/database'
 
 
 @Injectable({
