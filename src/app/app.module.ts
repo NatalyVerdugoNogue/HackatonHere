@@ -26,6 +26,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthService } from './services/auth.service';
+import { CreateAccountNameWorkComponent } from './popUp/create-account-name-work/create-account-name-work.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AuthService } from './services/auth.service';
     YourEventsComponent,
     YourPlaceComponent,
     UploadPhotoComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    CreateAccountNameWorkComponent
   ],
   imports: [
     BrowserModule,
