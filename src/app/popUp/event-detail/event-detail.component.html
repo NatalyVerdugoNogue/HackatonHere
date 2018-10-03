@@ -8,7 +8,7 @@
     <div class="card-body">
           <h3 class="card-title">{{evento.nombreEvento}}</h3>
           <h4 class="card-title"> {{evento.lugar}}</h4>
-          <h5 class="card-title">{{evento.fecha}}{{evento.horario}}</h5>
+          <h5 class="card-subtitle mb-2 text-muted">{{evento.fecha}}{{evento.horario}}</h5>
           <p class="card-text">{{evento.descripcion}}</p>
           <button class="btn btn-outline-info">Favorito</button>
           <button class="btn btn-outline-info" (click)="eventService.populateForm(evento)">Editar</button>
