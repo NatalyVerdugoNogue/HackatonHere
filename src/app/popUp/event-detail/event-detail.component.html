@@ -11,7 +11,7 @@
           <h5 class="card-subtitle mb-2 text-muted">{{evento.fecha}}{{evento.horario}}</h5>
           <p class="card-text">{{evento.descripcion}}</p>
           <button class="btn btn-outline-info">Favorito</button>
-          <button class="btn btn-outline-info" (click)="eventService.populateForm(evento)">Editar</button>
+          <button class="btn btn-outline-info" (click)="eventService.populateForm(evento)" href="#collapseExample" data-toggle="collapse">Editar</button>
           <button class="btn btn-outline-info" (click)="onDelete(evento.$key)">Eliminar</button>
     </div>
   </div>
