@@ -11,6 +11,10 @@
   </div>
 </div>
 <app-wall appId="8zxn9yuDOVdnRTHGZyBl" appCode="NcpsJVMjgLkGwXlRAP53Rw"  [start]="start" [finish]="finish" width="60%" height="530px"></app-wall> -->
+<div style="padding: 10px 0">
+    <input type="text" placeholder="Buscar lugar" [(ngModel)]="query" />
+    <button (click)="map.places(query)">Buscar</button>
+</div>
 <here-map
     #map
     appId="VGLR85mWlnbk1IC32Sdf"

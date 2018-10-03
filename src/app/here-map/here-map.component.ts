@@ -29,11 +29,10 @@ export class HereMapComponent implements OnInit {
 
   @Input()
   public height: any;
-
-  private platform: any;
-  private map: any;
   private ui: any;
   private search: any;
+  private platform: any;
+  private map: any;
 
   public constructor() { }
 
@@ -80,5 +79,4 @@ private dropMarker(coordinates: any, data: any) {
   }, false);
   this.map.addObject(marker);
 }
-
 }
