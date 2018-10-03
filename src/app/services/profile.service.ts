@@ -42,18 +42,11 @@ export class ProfileService {
     console.log('data addprof', data);
 
 
-    this.ProfileDataCollection.doc(uid).set(data)
+    this.afs.collection<IProfile>('ProfileData').valueChanges();
   }
 
-  // addUid(uid: string) {
-  //   this.afs.collection('ProfileData').doc(prod.prodid).update({
-  //     uid: uid
-  //   });
-  // }
 
-  getInfoProfile() {
-    this.ProfileDataCollection = this.afs.collection<IProfile>('ProfileData');
-    this.ProfileData = this.ProfileDataCollection.valueChanges();
-    return this.ProfileData;
+  getInfoProfile(uid: string) {
+    return this.ProfileDataCollection.doc(uid).get()
   }
 }

@@ -18,13 +18,7 @@ export class CreateAccountComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-    // this.signupFirebase.user.subscribe(user => {
-
-    //   this.uid = user.uid;
-    //   console.log('aaa', this.uid);
-    // });
-  }
+  ngOnInit() { }
 
   createCreateAccountForm() {
     this.createAccountForm = this.formBuilder.group({
