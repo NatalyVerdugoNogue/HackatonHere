@@ -1,33 +1,41 @@
 <div class="row">
     <div class="col-md-5">
-        <form [formGroup]="this.eventService.form" (ngSubmit)="onSubmit()">
-          <input type="hidden" formControlName="$key">
-            <div class="form-group">
-  
-              <label>Nombre de evento</label>
-                <input formControlName="nombreEvento" class="form-control" [ngClass]="{'is-invalid': submitted && formControls.nombreEvento.errors}">
-                <div class="invalid-feedback" *ngIf="submitted && formControls.nombreEvento.errors">Campo requerido</div>
-              
-              <label>Lugar</label>
-                <input formControlName="lugar" class="form-control" [ngClass]="{'is-invalid': submitted && formControls.lugar.errors}">
-                <div class="invalid-feedback" *ngIf="submitted && formControls.lugar.errors.required">Campo requerido</div>
-              
-              <label>Fecha</label>
-                <input formControlName="fecha" class="form-control" [ngClass]="{'is-invalid': submitted && formControls.fecha.errors}">
-                <div class="invalid-feedback" *ngIf="submitted && formControls.fecha.errors.required">Campo requerido</div>
-              
-              <label>Horario</label>
-                <input formControlName="horario" class="form-control" [ngClass]="{'is-invalid': submitted && formControls.horario.errors}">
-                <div class="invalid-feedback" *ngIf="submitted && formControls.horario.errors.required">Campo requerido</div>
-            
-                <label>Descripción</label>
-                <input formControlName="descripcion" class="form-control" [ngClass]="{'is-invalid': submitted && formControls.descripcion.errors}">
-                <div class="invalid-feedback" *ngIf="submitted && formControls.descripcion.errors.required">Campo requerido</div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Submit">
-                  </div>
-      </div>
-        </form>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Crear evento
+          </button>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+              <form [formGroup]="this.eventService.form" (ngSubmit)="onSubmit()" form-control form-control-sm>
+                  <input type="hidden" formControlName="$key">
+                    <div class="form-group">
+          
+                      <label>Nombre de evento</label>
+                        <input formControlName="nombreEvento" class="form-control" [ngClass]="{'is-invalid': submitted && formControls.nombreEvento.errors}">
+                        <div class="invalid-feedback" *ngIf="submitted && formControls.nombreEvento.errors">Campo requerido</div>
+                      
+                      <label>Lugar/Dirección</label>
+                        <input formControlName="lugar" class="form-control" [ngClass]="{'is-invalid': submitted && formControls.lugar.errors}">
+                        <div class="invalid-feedback" *ngIf="submitted && formControls.lugar.errors.required">Campo requerido</div>
+                      
+                      <label>Fecha</label>
+                        <input formControlName="fecha" class="form-control" [ngClass]="{'is-invalid': submitted && formControls.fecha.errors}">
+                        <div class="invalid-feedback" *ngIf="submitted && formControls.fecha.errors.required">Campo requerido</div>
+                      
+                      <label>Horario</label>
+                        <input formControlName="horario" class="form-control" [ngClass]="{'is-invalid': submitted && formControls.horario.errors}">
+                        <div class="invalid-feedback" *ngIf="submitted && formControls.horario.errors.required">Campo requerido</div>
+                    
+                        <label>Descripción</label>
+                        <input formControlName="descripcion" class="form-control" [ngClass]="{'is-invalid': submitted && formControls.descripcion.errors}">
+                        <div class="invalid-feedback" *ngIf="submitted && formControls.descripcion.errors.required">Campo requerido</div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Guardar">
+                          </div>
+              </div>
+                </form>
+          </div>
+        </div>
+        
               <div class= "alert alert-info" *ngIf="showSuccessMessage">
                 Guardado con exito
               </div>
