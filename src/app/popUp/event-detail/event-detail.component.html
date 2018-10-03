@@ -3,9 +3,9 @@
     <button class="btn btn-outline-primary" (click)="searchText=''">Limpiar</button>
 </form>
 <ng-container *ngFor="let evento of eventosArray" class="container">
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 18rem;" *ngIf="filterCondition(evento)">
     <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
-    <div class="card-body">
+    <div class="card-body" >
           <h3 class="card-title">{{evento.nombreEvento}}</h3>
           <h4 class="card-title"> {{evento.lugar}}</h4>
           <h5 class="card-subtitle mb-2 text-muted">{{evento.fecha}}{{evento.horario}}</h5>
