@@ -54,7 +54,6 @@ export class EventService {
         descripcion: evento.descripcion,
         favorite: evento.favorite
       });
-      this.form.reset();
   }
 
   deleteEvent($key: string) {
