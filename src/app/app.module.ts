@@ -27,9 +27,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthService } from './services/auth.service';
-import { CustomerComponent } from './views/customer/customer.component';
-import { CustomerListComponent } from './views/customer-list/customer-list.component';
-import {CustomerService} from './services/customer.service';
+import {EventService} from './services/event.service';
 
 @NgModule({
   declarations: [
@@ -48,8 +46,6 @@ import {CustomerService} from './services/customer.service';
     YourPlaceComponent,
     UploadPhotoComponent,
     EditProfileComponent,
-    CustomerComponent,
-    CustomerListComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +57,7 @@ import {CustomerService} from './services/customer.service';
     AngularFireStorageModule,
     AngularFireDatabaseModule
   ],
-  providers: [AuthService, CustomerService],
+  providers: [AuthService, EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
