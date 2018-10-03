@@ -20,12 +20,14 @@ import { UploadPhotoComponent } from './popUp/upload-photo/upload-photo.componen
 import { EditProfileComponent } from './popUp/edit-profile/edit-profile.component';
 
 // Firebase
+import { AngularFireDatabaseModule } from "@angular/fire/database"
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthService } from './services/auth.service';
+import {EventService} from './services/event.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,7 @@ import { AuthService } from './services/auth.service';
     YourEventsComponent,
     YourPlaceComponent,
     UploadPhotoComponent,
-    EditProfileComponent
+    EditProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,9 +54,10 @@ import { AuthService } from './services/auth.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    AngularFireDatabaseModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
