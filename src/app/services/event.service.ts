@@ -19,7 +19,8 @@ export class EventService {
     lugar: new FormControl('', Validators.required),
     fecha: new FormControl('', Validators.required),
     horario: new FormControl('', Validators.required),
-    descripcion: new FormControl('', Validators.required)
+    descripcion: new FormControl('', Validators.required),
+    favorite: new FormControl(false),
   });
 
 
@@ -28,14 +29,14 @@ export class EventService {
     return this.eventList.snapshotChanges();
   }
 
-
   insertEvent(evento) {
     this.eventList.push({
       nombreEvento: evento.nombreEvento,
       lugar: evento.lugar,
       fecha: evento.fecha,
       horario: evento.horario,
-      descripcion: evento.descripcion
+      descripcion: evento.descripcion,
+      favorite: evento.favorite
     });
   }
 
@@ -50,12 +51,17 @@ export class EventService {
         lugar: evento.lugar,
         fecha: evento.fecha,
         horario: evento.horario,
-        descripcion: evento.descripcion
+        descripcion: evento.descripcion,
+        favorite: evento.favorite
       });
+      this.form.reset();
   }
 
   deleteEvent($key: string) {
     this.eventList.remove($key);
   }
 
+  updateData(path, object){
+    this.firebase.object(path).update(object);
+  }
 }
