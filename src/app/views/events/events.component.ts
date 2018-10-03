@@ -9,7 +9,7 @@ import { EventService } from '../../services/event.service';
 
 export class EventsComponent  implements OnInit {
 
-  constructor(private eventService: EventService) { }
+  constructor(public eventService: EventService) { }
   submitted: boolean;
   showSuccessMessage : boolean;
   formControls = this.eventService.form.controls;
