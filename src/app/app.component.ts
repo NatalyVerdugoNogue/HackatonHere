@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
     public query: string;
-
     public ngOnInit() { }
 
 }

@@ -18,6 +18,7 @@ import { YourEventsComponent } from './popUp/your-events/your-events.component';
 import { YourPlaceComponent } from './popUp/your-place/your-place.component';
 import { UploadPhotoComponent } from './popUp/upload-photo/upload-photo.component';
 import { EditProfileComponent } from './popUp/edit-profile/edit-profile.component';
+import { MatCardModule } from '@angular/material/card';
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -54,7 +55,8 @@ import { HereMapComponent } from './here-map/here-map.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    MatCardModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
