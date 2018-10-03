@@ -43,4 +43,9 @@ export class EventDetailComponent implements OnInit {
     favorite = true;
     this.eventService.updateData('evento/' + key, { favorite: favorite })
   }
+
+  addAssistance(key, asistire){
+    asistire = true;
+    this.eventService.updateData('evento/' + key, { asistire: asistire })
+  }
 }
