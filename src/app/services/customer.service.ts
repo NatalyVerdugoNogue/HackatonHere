@@ -22,7 +22,7 @@ export class CustomerService {
 
 
   getListOfEvents() {
-    this.eventList = this.firebase.list('eventos');
+    this.eventList = this.firebase.list('evento');
     return this.eventList.snapshotChanges();
   }
 
@@ -36,23 +36,24 @@ export class CustomerService {
       descripcion: evento.descripcion
     });
   }
+
+  populateForm(evento) {
+    this.form.setValue(evento);
+  }
+
+  updateEvent(evento) {
+    this.eventList.update(evento.$key,
+      {
+        nombreEvento: evento.nombreEvento,
+        lugar: evento.lugar,
+        fecha: evento.fecha,
+        horario: evento.horario,
+        descripcion: evento.descripcion
+      });
+  }
+
+  deleteEvent($key: string) {
+    this.eventList.remove($key);
+  }
+
 }
-//   populateForm(customer) {
-//     this.form.setValue(customer);
-//   }
-
-//   updateCustomer(customer) {
-//     this.customerList.update(customer.$key,
-//       {
-//         fullName: customer.fullName,
-//         email: customer.email,
-//         mobile: customer.mobile,
-//         location: customer.location
-//       });
-//   }
-
-//   deleteCustomer($key: string) {
-//     this.customerList.remove($key);
-//   }
-
-// }
