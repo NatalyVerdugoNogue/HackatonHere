@@ -22,8 +22,10 @@ export class CustomerComponent implements OnInit {
     if (this.customerService.form.valid) {
       if (this.customerService.form.get('$key').value == null)
         this.customerService.insertEvent(this.customerService.form.value);
+        else
+          this.customerService.updateEvent(this.customerService.form.value);
         this.showSuccessMessage = true;
-        setTimeout(() => this.showSuccessMessage = false, 3000);
+        setTimeout(() => this.showSuccessMessage = false, 3000); // para que desaparezca el mensaje de exito en 3 seg
       this.submitted = false;
       this.customerService.form.setValue({
         $key: null,
