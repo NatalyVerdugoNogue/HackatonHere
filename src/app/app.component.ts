@@ -14,11 +14,12 @@ export class AppComponent implements OnInit {
     @ViewChild("map")
     public mapElement: ElementRef;
 
+    public start: string;
+    public finish: string;
+
     public constructor() {
-        this.platform = new H.service.Platform({
-            "app_id": "VGLR85mWlnbk1IC32Sdf",
-            "app_code": "B_vLITHwu1cJU6qp1tsBwg"
-        });
+        this.start = "37.7397,-121.4252";
+        this.finish = "37.6819,-121.7680";
     }
 
     public ngOnInit() { }
@@ -34,5 +35,6 @@ export class AppComponent implements OnInit {
             }
         );
     }
+    
 
 }

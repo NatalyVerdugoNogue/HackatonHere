@@ -1,2 +1,13 @@
-<app-create-account></app-create-account>
-<div #map style="width: 1280px; height: 768px"></div>
+<div style="padding: 10px 0">
+  <div>
+    <p>Inicio</p>  
+    <label style="display: inline-block; width: 60px; color: #FFF">Start</label>
+      <input type="text" [(ngModel)]="start" />
+  </div>
+  <div>
+    <p>Final</p>
+      <label style="display: inline-block; width: 60px; color: #FFF">Finish</label>
+      <input type="text" [(ngModel)]="finish" />
+  </div>
+</div>
+<app-wall appId="VGLR85mWlnbk1IC32Sdf" appCode="B_vLITHwu1cJU6qp1tsBwg"  [start]="start" [finish]="finish" width="60%" height="530px"></app-wall>
