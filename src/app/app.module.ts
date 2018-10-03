@@ -20,6 +20,7 @@ import { UploadPhotoComponent } from './popUp/upload-photo/upload-photo.componen
 import { EditProfileComponent } from './popUp/edit-profile/edit-profile.component';
 
 // Firebase
+import { AngularFireDatabaseModule } from "@angular/fire/database"
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -27,6 +28,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthService } from './services/auth.service';
 import { CreateAccountNameWorkComponent } from './popUp/create-account-name-work/create-account-name-work.component';
+import {EventService} from './services/event.service';
 
 @NgModule({
   declarations: [
@@ -54,9 +56,10 @@ import { CreateAccountNameWorkComponent } from './popUp/create-account-name-work
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    AngularFireDatabaseModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
