@@ -20,6 +20,7 @@ export class EventService {
     fecha: new FormControl('', Validators.required),
     horario: new FormControl('', Validators.required),
     descripcion: new FormControl('', Validators.required),
+    asistire: new FormControl(false),
     favorite: new FormControl(false),
   });
 
@@ -36,6 +37,7 @@ export class EventService {
       fecha: evento.fecha,
       horario: evento.horario,
       descripcion: evento.descripcion,
+      asistire: evento.asistire,
       favorite: evento.favorite
     });
   }
@@ -52,6 +54,7 @@ export class EventService {
         fecha: evento.fecha,
         horario: evento.horario,
         descripcion: evento.descripcion,
+        asistire: evento.asistire,
         favorite: evento.favorite
       });
   }
