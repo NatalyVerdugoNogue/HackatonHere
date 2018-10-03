@@ -2,7 +2,22 @@
     <input class="form-control" name="searchInput" placeholder="Buscar evento" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">
     <button class="btn btn-outline-primary" (click)="searchText=''">Limpiar</button>
 </form>
-<table class="table table-sm">
+<ng-container *ngFor="let evento of eventosArray" class="container">
+<div class="card" style="width: 18rem;">
+    <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
+    <div class="card-body">
+          <h3 class="card-title">{{evento.nombreEvento}}</h3>
+          <h4 class="card-title"> {{evento.lugar}}</h4>
+          <h5 class="card-title">{{evento.fecha}}{{evento.horario}}</h5>
+          <p class="card-text">{{evento.descripcion}}</p>
+          <button class="btn btn-outline-info">Favorito</button>
+          <button class="btn btn-outline-info" (click)="eventService.populateForm(evento)">Editar</button>
+          <button class="btn btn-outline-info" (click)="onDelete(evento.$key)">Eliminar</button>
+    </div>
+  </div>
+</ng-container>
+
+<!-- <table class="table table-sm">
     <ng-container *ngFor="let evento of eventosArray">
         <tr class="table-dark" *ngIf="filterCondition(evento)">
             <td>{{evento.nombreEvento}}</td>
@@ -17,7 +32,8 @@
                 </td>
         </tr>   
     </ng-container>
-</table>
+</table> -->
 <div class="alert alert-danger" *ngIf="showDeletedMessage">
 Evento eliminado exitosamente
 </div>
+
