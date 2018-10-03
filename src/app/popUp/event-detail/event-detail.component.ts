@@ -45,7 +45,7 @@ export class EventDetailComponent implements OnInit {
   }
 
   addAssistance(key, asistire){
-    asistire = true;
+    asistire++
     this.eventService.updateData('evento/' + key, { asistire: asistire })
   }
 }
