@@ -1,13 +1,17 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 
-declare var H: any;
-
+declare let H: any;
 @Component({
   selector: 'here-map',
   templateUrl: './here-map.component.html',
   styleUrls: ['./here-map.component.css']
 })
 export class HereMapComponent implements OnInit {
+
+  public constructor(
+    public title : string,
+    public vicinityNoBr : any,) {}
+
 
   @ViewChild("map")
   public mapElement: ElementRef;
@@ -33,8 +37,6 @@ export class HereMapComponent implements OnInit {
   private search: any;
   private platform: any;
   private map: any;
-
-  public constructor() { }
 
   public ngOnInit() {
     this.platform = new H.service.Platform({
@@ -67,21 +69,13 @@ export class HereMapComponent implements OnInit {
       console.error(error);
     });
   }
-
   private dropMarker(coordinates: any, data: any) {
-    var svgMarkup = data.icon;
-  
-  // Create an icon, an object holding the latitude and longitude, and a marker:
-  var icon = new H.map.Icon(svgMarkup);
-    let marker = new H.map.Marker(coordinates, {icon: icon});
-    console.log(data.icon)
-    marker.setData("<p>" + data.title + "<br>" + data.vicinity + "</p>" );
-    marker.addEventListener('tap', event => {
-      let bubble = new H.ui.InfoBubble(event.target.getPosition(), {
-        content: event.target.getData()
-      });
-      this.ui.addBubble(bubble);
-    }, false);
+    let svgMarkup = data.icon;
+    let icon = new H.map.Icon(svgMarkup);
+    let marker = new H.map.Marker(coordinates, { icon: icon });
+    let vicOne = data.vicinity.split("<br/>" , 1);
+    this.title = data.title;
+    this.vicinityNoBr = vicOne;
     this.map.addObject(marker);
   }
 }
