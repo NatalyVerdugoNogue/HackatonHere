@@ -6,6 +6,9 @@ import { RouterModule } from '@angular/router'
 // material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatCardModule, MatCheckboxModule, MatListModule } from '@angular/material';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 // componentes
 import { AppComponent } from './app.component';
@@ -85,6 +88,9 @@ import { NavbarComponent } from './views/navbar/navbar.component';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatSnackBarModule,
     RouterModule.forRoot([
       { path: 'SignUp', component: SignUpComponent },
       { path: 'Splash', component: SplashComponent },
