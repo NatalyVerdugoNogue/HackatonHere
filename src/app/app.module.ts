@@ -52,7 +52,6 @@ import { CheckDataComponent } from './popUp/check-data/check-data.component';
     UploadPhotoComponent,
     EditProfileComponent,
     CreateAccountNameWorkComponent,
-    MyEventsComponent,
     FormUploadComponent,
     ListUploadComponent,
     DetailsUploadComponent,
