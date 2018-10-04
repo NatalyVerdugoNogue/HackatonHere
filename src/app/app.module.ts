@@ -98,7 +98,7 @@ import { AcceptTermsComponent } from './views/accept-terms/accept-terms.componen
     RouterModule.forRoot([
       { path: 'SignUp', component: SignUpComponent },
       { path: 'Splash', component: SplashComponent },
-      {path: 'map', component: HereMapComponent},
+      {path: 'map', component: InputMapComponent},
       { path: '', redirectTo: 'Splash', pathMatch: 'full' },
       { path: '**', redirectTo: 'Splash', pathMatch: 'full' },
       { path: 'Guardados', component: YourEventsComponent },
