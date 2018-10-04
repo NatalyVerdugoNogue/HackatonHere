@@ -3,9 +3,8 @@ export interface IProfile {
   date: string;
   uid: string;
   name: string;
-  nameProyect: string;
+  nameWork: string;
   photo: string;
-  workItem: string;
   address: string;
   areasInterest: string[];
 }

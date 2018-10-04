@@ -8,9 +8,8 @@ declare let H: any;
 })
 export class HereMapComponent implements OnInit {
 
-  public constructor(
-    public title : string,
-    public vicinityNoBr : any,) {}
+    public title : string;
+    public vicinityNoBr : any;
 
 
   @ViewChild("map")

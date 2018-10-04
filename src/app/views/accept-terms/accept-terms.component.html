@@ -1,0 +1,11 @@
+<label>
+  <input type="checkbox" (change)="toggleVisibility($event)">
+  Aceptar Términos y condiciones <a href="">ver</a>
+</label>
+
+
+<br>
+<button type="submit" class="btn" [disabled]="!marked" (click)="submit()">CREA TU CUENTA</button>
+<br>
+
+<button>Ingresa aquí</button>

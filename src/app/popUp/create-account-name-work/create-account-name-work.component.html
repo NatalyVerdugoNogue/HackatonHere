@@ -1,0 +1,9 @@
+<div *ngIf="dataUser[0].name"> {{dataUser[0].name}}</div>
+
+<form [formGroup]="createAccountWorkForm" (ngSubmit)="onRegisterWork()">
+  <div class="form-group">
+    <input #name type="text" class="form-control" placeholder="Nombre emprendimiento" formControlName="nameWork">
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!createAccountWorkForm.valid">Continuar</button>
+</form>
