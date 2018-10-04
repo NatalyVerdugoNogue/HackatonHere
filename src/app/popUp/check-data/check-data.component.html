@@ -1,10 +1,8 @@
-<div (ngSubmit)="submit()">
-  <input type="checkbox" [(ngModel)]="miVariable" (fun)="" name="casa" />
-
-  <br /> <!-- Salto de linea -->
-
-  miVariable ahora es <b>{{miVariable}}</b>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <label formArrayName="orders" *ngFor="let order of form.controls.orders.controls; let i = index">
+    <input type="checkbox" [formControlName]="i">
+    {{orders[i].name}}
+  </label>
   <br>
-
-  <button type="submit" class="btn btn-primary">Continuar</button>
-</div>
+  <button [disabled]="!form.valid">submit</button>
+</form>

@@ -6,9 +6,9 @@ import { RouterModule } from '@angular/router'
 // material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatCardModule, MatCheckboxModule, MatListModule } from '@angular/material';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 // componentes
 import { AppComponent } from './app.component';
@@ -45,6 +45,11 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 // Services
 import { AuthService } from './services/auth.service';
 import { EventService } from './services/event.service';
+import { AcceptTermsComponent } from './views/accept-terms/accept-terms.component';
+
+
+
+
 import { NavbarComponent } from './views/navbar/navbar.component';
 
 @NgModule({
@@ -71,6 +76,7 @@ import { NavbarComponent } from './views/navbar/navbar.component';
     FormUploadComponent,
     ListUploadComponent,
     DetailsUploadComponent,
+    AcceptTermsComponent,
     CheckDataComponent,
     NavbarComponent
   ],
