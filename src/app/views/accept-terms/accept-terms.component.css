@@ -16,9 +16,24 @@
   font-weight: 100;
   padding: 0.5%;
   color: white;
-  font-size: 30%;
+  font-size: 70%;
 }
 
-.text{
-  font-family: 
+.text {
+  font-family: 'Roboto', 'sans-serif';
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 16px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.text-input {
+  font-family: 'Roboto', 'sans-serif';
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 12px;
+  text-align: center;
 }

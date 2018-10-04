@@ -1,27 +1,35 @@
 <div class="row m-0">
-  <div class="col-auto m-auto">
+  <div class="col-8 m-auto">
     <img src="../../../assets/img/Logo-Splash.png" class="img-fluid img-splash" alt="Responsive image">
   </div>
 </div>
-<div class="row m-0">
-  <div class="col-auto m-auto">
+<div class="row m-0 pt-5">
+  <div class="col-8 m-auto">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <span>Conecta con el ecosistema emprendedor</span>
+          <span class="text text-justify">Conecta con el ecosistema emprendedor</span>
         </div>
         <div class="carousel-item">
-          <span>Conecta con el ecosistema emprendedor</span>
+          <span class="text text-justify">Encuentra los mejores lugares para trabajar y hacer trámites</span>
         </div>
         <div class="carousel-item">
-          <span>Conecta con el ecosistema emprendedor</span>
+          <span class="text text-justify">Crea y ve eventos cercanos a ti</span>
+        </div>
+        <div class="carousel-item">
+          <span class="text text-justify">Conecta con emprendedores de tu área</span>
+        </div>
+        <div class="carousel-item">
+          <span class="text text-justify">Obtén beneficios exclusivos</span>
         </div>
       </div>
 
       <ol class="carousel-indicators">
-        <i class="fas fa-circle" data-target="#carouselExampleIndicators" data-slide-to="0"></i>
-        <i class="fas fa-circle" data-target="#carouselExampleIndicators" data-slide-to="1"></i>
-        <i class="fas fa-circle" data-target="#carouselExampleIndicators" data-slide-to="2"></i>
+        <i class="fas fa-circle px-1" data-target="#carouselExampleIndicators" data-slide-to="0"></i>
+        <i class="fas fa-circle px-1" data-target="#carouselExampleIndicators" data-slide-to="1"></i>
+        <i class="fas fa-circle px-1" data-target="#carouselExampleIndicators" data-slide-to="2"></i>
+        <i class="fas fa-circle px-1" data-target="#carouselExampleIndicators" data-slide-to="3"></i>
+        <i class="fas fa-circle px-1" data-target="#carouselExampleIndicators" data-slide-to="4"></i>
       </ol>
       <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -35,15 +43,21 @@
   </div>
 </div>
 
+<div class="row m-0">
+  <div class="col-9 m-auto">
+    <label class="text-input">
+      <input type="checkbox" (change)="toggleVisibility($event)">
+      Aceptar Términos y condiciones <a href="">ver</a>
+    </label>
+  </div>
+</div>
 
-<label>
-  <input type="checkbox" (change)="toggleVisibility($event)">
-  Aceptar Términos y condiciones <a href="">ver</a>
-</label>
-
-
-<br>
-<button type="submit" class="btn" [disabled]="!marked" (click)="submit()">CREA TU CUENTA</button>
-<br>
+<div class="row m-0">
+  <div class="col-auto m-auto">
+    <br>
+    <button type="submit" class="btn" [disabled]="!marked" (click)="submit()">CREA TU CUENTA</button>
+    <br>
+  </div>
+</div>
 
 <button>Ingresa aquí</button>
