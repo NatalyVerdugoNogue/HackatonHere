@@ -59,4 +59,10 @@ export class ProfileService {
     })
   }
 
+  addAreasInterest(info: string, uid: string) {
+    this.afs.collection('ProfileData').doc(uid).update({
+      areasInterest: info
+    })
+  }
+
 }
