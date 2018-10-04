@@ -1,23 +1,25 @@
 <form class="form-inline">
     <input class="form-control" name="searchInput" placeholder="Buscar evento" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">
-    <button class="btn btn-outline-primary" (click)="searchText=''">Limpiar</button>
+    <button class="btn btn-outline-primary" (click)="searchText=''">X</button>
 </form>
-<table class="table table-sm">
-    <ng-container *ngFor="let evento of eventosArray">
-        <tr class="table-dark" *ngIf="filterCondition(evento)">
-            <td>{{evento.nombreEvento}}</td>
-            <td>{{evento.lugar}}</td>
-            <td>{{evento.fecha}}</td>
-            <td>{{evento.horario}}</td>
-            <td>{{evento.descripcion}}</td>
-                <td>
-                    <button class="btn btn-outline-info">Favorito</button>
-                    <button class="btn btn-outline-info" (click)="eventService.populateForm(evento)">Editar</button>
-                    <button class="btn btn-outline-info" (click)="onDelete(evento.$key)">Eliminar</button>
-                </td>
-        </tr>   
-    </ng-container>
-</table>
+<ng-container *ngFor="let evento of eventosArray" class="container">
+<div class="card" style="width: 18rem;" *ngIf="filterCondition(evento)">
+    <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
+    <div class="card-body" >
+          <h3 class="card-title">{{evento.nombreEvento}}</h3>
+          <h4 class="card-title"> {{evento.lugar}}</h4>
+          <h5 class="card-subtitle mb-2 text-muted">{{evento.fecha}}{{evento.horario}}</h5>
+          <p class="card-text">{{evento.descripcion}}</p>
+          <button class="btn btn-outline-info" (click)="eventService.populateForm(evento)" href="#collapseExample" data-toggle="collapse">Editar</button>
+          <button class="btn btn-outline-info" (click)="onDelete(evento.$key)">Eliminar</button>
+          <div >
+          <button class="btn btn-outline-info" (click)="addFavorite(evento.$key, evento.favorite)">Favorito</button>
+          <button class="btn btn-outline-info" (click)="addAssistance(evento.$key, evento.asistire)">Asistire {{evento.asistire}}</button>
+        </div>
+    </div>
+  </div>
+</ng-container>
 <div class="alert alert-danger" *ngIf="showDeletedMessage">
 Evento eliminado exitosamente
 </div>
+

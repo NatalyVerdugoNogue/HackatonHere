@@ -29,6 +29,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthService } from './services/auth.service';
 import { CreateAccountNameWorkComponent } from './popUp/create-account-name-work/create-account-name-work.component';
 import {EventService} from './services/event.service';
+import { FormUploadComponent } from './views/upload/form-upload/form-upload.component';
+import { ListUploadComponent } from './views/upload/list-upload/list-upload.component';
+import { DetailsUploadComponent } from './views/upload/details-upload/details-upload.component';
 import { CheckDataComponent } from './popUp/check-data/check-data.component';
 
 @NgModule({
@@ -49,6 +52,9 @@ import { CheckDataComponent } from './popUp/check-data/check-data.component';
     UploadPhotoComponent,
     EditProfileComponent,
     CreateAccountNameWorkComponent,
+    FormUploadComponent,
+    ListUploadComponent,
+    DetailsUploadComponent,
     CheckDataComponent
   ],
   imports: [
