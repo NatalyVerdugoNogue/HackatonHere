@@ -33,6 +33,7 @@ import { FormUploadComponent } from './views/upload/form-upload/form-upload.comp
 import { ListUploadComponent } from './views/upload/list-upload/list-upload.component';
 import { DetailsUploadComponent } from './views/upload/details-upload/details-upload.component';
 import { CheckDataComponent } from './popUp/check-data/check-data.component';
+import { NavbarComponent } from './views/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { CheckDataComponent } from './popUp/check-data/check-data.component';
     FormUploadComponent,
     ListUploadComponent,
     DetailsUploadComponent,
-    CheckDataComponent
+    CheckDataComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
