@@ -32,6 +32,7 @@ import { CreateAccountNameWorkComponent } from './popUp/create-account-name-work
 import { FormUploadComponent } from './views/upload/form-upload/form-upload.component';
 import { ListUploadComponent } from './views/upload/list-upload/list-upload.component';
 import { DetailsUploadComponent } from './views/upload/details-upload/details-upload.component';
+import { HereMapComponent } from './here-map/here-map.component';
 
 // Firebase
 import { AngularFireDatabaseModule } from "@angular/fire/database"
@@ -76,7 +77,8 @@ import { NavbarComponent } from './views/navbar/navbar.component';
     DetailsUploadComponent,
     AcceptTermsComponent,
     CheckDataComponent,
-    NavbarComponent
+    NavbarComponent,
+    HereMapComponent
   ],
   imports: [
     BrowserModule,
@@ -98,6 +100,7 @@ import { NavbarComponent } from './views/navbar/navbar.component';
     RouterModule.forRoot([
       { path: 'SignUp', component: SignUpComponent },
       { path: 'Splash', component: SplashComponent },
+      {path: 'map', component: HereMapComponent},
       { path: '', redirectTo: 'Splash', pathMatch: 'full' },
       { path: '**', redirectTo: 'Splash', pathMatch: 'full' }
     ])
