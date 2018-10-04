@@ -3,8 +3,6 @@
     <input type="checkbox" [formControlName]="i">
     {{orders[i].name}}
   </label>
-
-  <div *ngIf="!form.valid">At least one order must be selected</div>
   <br>
   <button [disabled]="!form.valid">submit</button>
 </form>

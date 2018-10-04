@@ -25,22 +25,19 @@ export class ProfileService {
     );
   }
 
-  // addProfileData(email: string, uid: string, name: string, nameProyect: string, workItem: string) {
-
+  
   addProfileAuth(name: string, email: string, uid: string) {
     const data: IProfile = {
       email: email,
       date: new Date().toISOString(),
       uid: uid,
       name: name,
-      nameProyect: null,
+      nameWork: null,
       photo: null,
-      workItem: null,
       address: null,
       areasInterest: null
     }
 
-    console.log('data addprof', data);
 
 
     this.ProfileDataCollection.doc(uid).set(data)

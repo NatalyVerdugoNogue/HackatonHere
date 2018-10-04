@@ -42,6 +42,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 // Services
 import { AuthService } from './services/auth.service';
 import { EventService } from './services/event.service';
+import { AcceptTermsComponent } from './views/accept-terms/accept-terms.component';
 
 
 
@@ -70,7 +71,8 @@ import { EventService } from './services/event.service';
     SignUpComponent,
     FormUploadComponent,
     ListUploadComponent,
-    DetailsUploadComponent
+    DetailsUploadComponent,
+    AcceptTermsComponent
   ],
   imports: [
     BrowserModule,
