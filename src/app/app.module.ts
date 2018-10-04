@@ -30,6 +30,9 @@ import { AuthService } from './services/auth.service';
 import { CreateAccountNameWorkComponent } from './popUp/create-account-name-work/create-account-name-work.component';
 import {EventService} from './services/event.service';
 import { MyEventsComponent } from './views/my-events/my-events.component';
+import { FormUploadComponent } from './views/upload/form-upload/form-upload.component';
+import { ListUploadComponent } from './views/upload/list-upload/list-upload.component';
+import { DetailsUploadComponent } from './views/upload/details-upload/details-upload.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,10 @@ import { MyEventsComponent } from './views/my-events/my-events.component';
     UploadPhotoComponent,
     EditProfileComponent,
     CreateAccountNameWorkComponent,
-    MyEventsComponent
+    MyEventsComponent,
+    FormUploadComponent,
+    ListUploadComponent,
+    DetailsUploadComponent
   ],
   imports: [
     BrowserModule,
