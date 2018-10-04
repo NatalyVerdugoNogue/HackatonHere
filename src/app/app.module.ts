@@ -101,8 +101,14 @@ import { NavbarComponent } from './views/navbar/navbar.component';
       { path: 'splash', component: SplashComponent },
       { path: 'terminos', component: AcceptTermsComponent },
       { path: 'signUp', component: SignUpComponent },
+      { path: 'guardados', component: YourEventsComponent },
+      { path: 'perfil', component: ViewProfileComponent },
+      { path: 'eventos', component: EventsComponent },
       { path: '', redirectTo: 'splash', pathMatch: 'full' },
       { path: '**', redirectTo: 'splash', pathMatch: 'full' }
+
+
+
     ])
   ],
   exports: [
