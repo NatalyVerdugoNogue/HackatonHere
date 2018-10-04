@@ -6,6 +6,9 @@ import { RouterModule } from '@angular/router'
 // material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatCardModule, MatCheckboxModule, MatListModule } from '@angular/material';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 // componentes
 import { AppComponent } from './app.component';
@@ -42,10 +45,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 // Services
 import { AuthService } from './services/auth.service';
 import { EventService } from './services/event.service';
-
-
-
-
+import { NavbarComponent } from './views/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +70,9 @@ import { EventService } from './services/event.service';
     SignUpComponent,
     FormUploadComponent,
     ListUploadComponent,
-    DetailsUploadComponent
+    DetailsUploadComponent,
+    CheckDataComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -86,6 +88,9 @@ import { EventService } from './services/event.service';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatSnackBarModule,
     RouterModule.forRoot([
       { path: 'SignUp', component: SignUpComponent },
       { path: 'Splash', component: SplashComponent },
