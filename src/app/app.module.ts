@@ -33,6 +33,7 @@ import { MyEventsComponent } from './views/my-events/my-events.component';
 import { FormUploadComponent } from './views/upload/form-upload/form-upload.component';
 import { ListUploadComponent } from './views/upload/list-upload/list-upload.component';
 import { DetailsUploadComponent } from './views/upload/details-upload/details-upload.component';
+import { CheckDataComponent } from './popUp/check-data/check-data.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { DetailsUploadComponent } from './views/upload/details-upload/details-up
     MyEventsComponent,
     FormUploadComponent,
     ListUploadComponent,
-    DetailsUploadComponent
+    DetailsUploadComponent,
+    CheckDataComponent
   ],
   imports: [
     BrowserModule,
