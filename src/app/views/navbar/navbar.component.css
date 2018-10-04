@@ -3,7 +3,11 @@ i{
     background-color: inherit;
     color: #ffff;
   }
-  i:hover,
+  i:hover{
+    border: none !important;
+    background-color: inherit;
+    color:#ffff;
+  }
   button:hover {
     border: none !important;
     background-color: inherit;
