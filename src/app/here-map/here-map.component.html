@@ -1,2 +1,5 @@
-<div #map [style.width]="width" [style.height]="height"></div>
-<mat-card *ngFor="let card of cards">{{title}} <br> {{vicinityNoBr}} <br> Horario: 8 am - 2 pm</mat-card>
+<app-navbar></app-navbar>
+
+<div #map [style.width]="width" [style.height]="height" ></div>
+<app-input-map></app-input-map>
+<mat-card >{{title}} <br> {{vicinityNoBr}} <br> {{time}}</mat-card>

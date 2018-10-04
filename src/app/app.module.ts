@@ -33,6 +33,8 @@ import { FormUploadComponent } from './views/upload/form-upload/form-upload.comp
 import { ListUploadComponent } from './views/upload/list-upload/list-upload.component';
 import { DetailsUploadComponent } from './views/upload/details-upload/details-upload.component';
 import { HereMapComponent } from './here-map/here-map.component';
+import { NavbarComponent } from './views/navbar/navbar.component';
+import { InputMapComponent } from './input-map/input-map.component';
 
 // Firebase
 import { AngularFireDatabaseModule } from "@angular/fire/database"
@@ -46,11 +48,6 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthService } from './services/auth.service';
 import { EventService } from './services/event.service';
 import { AcceptTermsComponent } from './views/accept-terms/accept-terms.component';
-
-
-
-
-import { NavbarComponent } from './views/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +75,8 @@ import { NavbarComponent } from './views/navbar/navbar.component';
     AcceptTermsComponent,
     CheckDataComponent,
     NavbarComponent,
-    HereMapComponent
+    HereMapComponent,
+    InputMapComponent
   ],
   imports: [
     BrowserModule,

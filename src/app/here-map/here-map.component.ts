@@ -8,13 +8,13 @@ declare let H: any;
   styleUrls: ['./here-map.component.css']
 })
 export class HereMapComponent implements OnInit {
-  
-  cards: string[];
 
-  constructor (    
-    public title : any,
-    public vicinityNoBr : any,
-    public image : string) {}
+  cards: string[];
+  
+    public title : any;
+    public vicinityNoBr : any;
+    public image : string;
+    public time: any;
 
   @ViewChild("map")
   public mapElement: ElementRef;
@@ -73,13 +73,14 @@ export class HereMapComponent implements OnInit {
     });
   }
   private dropMarker(coordinates: any, data: any) {
-    this.image = '../../assets/img/pinmap.png';
+    this.image = '../../assets/img/pin2.png';
     let svgMarkup = this.image;
     let icon = new H.map.Icon(svgMarkup);
     let marker = new H.map.Marker(coordinates, { icon: icon });
     let vicOne = data.vicinity.split("<br/>" , 1);
     this.title = data.title;
     this.vicinityNoBr = vicOne;
+    this.time = ('Horario: 09:00-14:00');
     this.map.addObject(marker);
   }
 }
