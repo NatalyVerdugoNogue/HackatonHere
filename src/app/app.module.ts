@@ -27,6 +27,9 @@ import { CheckDataComponent } from './popUp/check-data/check-data.component';
 import { SplashComponent } from './views/splash/splash.component';
 import { SignUpComponent } from './views/sign-up/sign-up.component';
 import { CreateAccountNameWorkComponent } from './popUp/create-account-name-work/create-account-name-work.component';
+import { FormUploadComponent } from './views/upload/form-upload/form-upload.component';
+import { ListUploadComponent } from './views/upload/list-upload/list-upload.component';
+import { DetailsUploadComponent } from './views/upload/details-upload/details-upload.component';
 
 // Firebase
 import { AngularFireDatabaseModule } from "@angular/fire/database"
@@ -39,6 +42,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 // Services
 import { AuthService } from './services/auth.service';
 import { EventService } from './services/event.service';
+
 
 
 
@@ -63,7 +67,10 @@ import { EventService } from './services/event.service';
     CreateAccountNameWorkComponent,
     CheckDataComponent,
     SplashComponent,
-    SignUpComponent
+    SignUpComponent,
+    FormUploadComponent,
+    ListUploadComponent,
+    DetailsUploadComponent
   ],
   imports: [
     BrowserModule,

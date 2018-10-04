@@ -33,7 +33,9 @@ export class EventsComponent  implements OnInit {
         lugar: '',
         fecha: '',
         horario: '',
-        descripcion: ''
+        descripcion: '',
+        asistire: false,
+        favorite: false,
       });
     }
   }
