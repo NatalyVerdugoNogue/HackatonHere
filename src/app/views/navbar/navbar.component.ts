@@ -26,25 +26,18 @@ export class NavbarComponent implements OnInit {
   photo: any;
   email: any;
 
-  // tslint:disable-next-line:max-line-length
-  constructor() {
+  constructor(private logoutFirebase: AuthService) {
 
   }
 
   ngOnInit() {
   }
 
-/*   onLogout() {
-    this.authService.logout()
-      .then(() => {
-        this.router.navigate(['/login']);
-      })
-      .catch(() => {
-        this.snackBar.open('Error al tratar de cerrar sesión, trata otra vez'
-          , null
-          , {
-            duration: 3000
-          });
-      });
-  } */
+  logoutAuth() {
+    this.logoutFirebase.logout().then(
+      info => {
+        console.log(info)
+      }
+    )
+  }
 }

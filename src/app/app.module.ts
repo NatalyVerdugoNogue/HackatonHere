@@ -102,7 +102,10 @@ import { NavbarComponent } from './views/navbar/navbar.component';
       { path: 'Splash', component: SplashComponent },
       {path: 'map', component: HereMapComponent},
       { path: '', redirectTo: 'Splash', pathMatch: 'full' },
-      { path: '**', redirectTo: 'Splash', pathMatch: 'full' }
+      { path: '**', redirectTo: 'Splash', pathMatch: 'full' },
+      { path: 'Guardados', component: YourEventsComponent },
+      { path: 'Perfil', component: ViewProfileComponent },
+      { path: 'Eventos', component: EventsComponent },
     ])
   ],
   exports: [
