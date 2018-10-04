@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
+import { UploadFileService } from '../views/upload/upload-file.service';
 
 declare let H: any;
 @Component({
@@ -7,10 +8,13 @@ declare let H: any;
   styleUrls: ['./here-map.component.css']
 })
 export class HereMapComponent implements OnInit {
+  
+  cards: string[];
 
-    public title : string;
-    public vicinityNoBr : any;
-
+  constructor (    
+    public title : any,
+    public vicinityNoBr : any,
+    public image : string) {}
 
   @ViewChild("map")
   public mapElement: ElementRef;
@@ -69,7 +73,8 @@ export class HereMapComponent implements OnInit {
     });
   }
   private dropMarker(coordinates: any, data: any) {
-    let svgMarkup = data.icon;
+    this.image = '../../assets/img/pinmap.png';
+    let svgMarkup = this.image;
     let icon = new H.map.Icon(svgMarkup);
     let marker = new H.map.Marker(coordinates, { icon: icon });
     let vicOne = data.vicinity.split("<br/>" , 1);
