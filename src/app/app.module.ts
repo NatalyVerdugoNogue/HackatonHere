@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router'
 
 // material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCheckboxModule } from '@angular/material';
+import { MatToolbarModule, MatCardModule, MatCheckboxModule, MatListModule } from '@angular/material';
 
 // componentes
 import { AppComponent } from './app.component';
@@ -69,7 +69,10 @@ import { EventService } from './services/event.service';
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
+    MatToolbarModule,
+    MatCardModule,
     MatCheckboxModule,
+    MatListModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
@@ -82,6 +85,12 @@ import { EventService } from './services/event.service';
       { path: '', redirectTo: 'Splash', pathMatch: 'full' },
       { path: '**', redirectTo: 'Splash', pathMatch: 'full' }
     ])
+  ],
+  exports: [
+    MatToolbarModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatListModule
   ],
   providers: [AuthService, EventService],
   bootstrap: [AppComponent]

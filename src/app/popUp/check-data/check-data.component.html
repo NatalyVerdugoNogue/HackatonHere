@@ -1,1 +1,10 @@
-<mat-checkbox>Check me!</mat-checkbox>
+<div (ngSubmit)="submit()">
+  <input type="checkbox" [(ngModel)]="miVariable" name="casa" />
+
+  <br /> <!-- Salto de linea -->
+
+  miVariable ahora es <b>{{miVariable}}</b>
+  <br>
+
+  <button type="submit" class="btn btn-primary">Continuar</button>
+</div>

@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray, FormControl, ValidatorFn } from '@angular/forms';
-
+import { Component, OnInit, NgModule, Pipe, PipeTransform, enableProdMode } from '@angular/core';
+import { FormGroup, FormsModule, FormBuilder, FormArray, FormControl, ValidatorFn } from '@angular/forms';
+import { MatCheckboxModule } from '@angular/material'
+import { Injectable } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 @Component({
   selector: 'app-check-data',
@@ -9,24 +12,17 @@ import { FormGroup, FormBuilder, FormArray, FormControl, ValidatorFn } from '@an
 })
 export class CheckDataComponent implements OnInit {
 
+  miVariable: boolean = true;
 
-  constructor(private formBuilder: FormBuilder) {
 
-  }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+
+
   }
 
-  // createCheck() {
-  //   this.form = this.formBuilder.group({
-  //     Informática: [''],
-  //     Alimentos: [''],
-  //     ServiciosFinancieros: [''],
-  //     Transporte: [''],
-  //     SaludyFarmaceutica: [''],
-  //     Otros: ['']
-  //   });
-  // }
-
-
+  submit() {
+    console.log(this.miVariable);
+  }
 }
