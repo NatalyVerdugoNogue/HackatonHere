@@ -98,10 +98,11 @@ import { NavbarComponent } from './views/navbar/navbar.component';
     MatIconModule,
     MatSnackBarModule,
     RouterModule.forRoot([
-      { path: 'SignUp', component: SignUpComponent },
-      { path: 'Splash', component: SplashComponent },
-      { path: '', redirectTo: 'Splash', pathMatch: 'full' },
-      { path: '**', redirectTo: 'Splash', pathMatch: 'full' }
+      { path: 'splash', component: SplashComponent },
+      { path: 'terminos', component: AcceptTermsComponent },
+      { path: 'signUp', component: SignUpComponent },
+      { path: '', redirectTo: 'splash', pathMatch: 'full' },
+      { path: '**', redirectTo: 'splash', pathMatch: 'full' }
     ])
   ],
   exports: [
