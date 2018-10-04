@@ -1,6 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router'
+
+// material
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule, MatCardModule, MatCheckboxModule, MatListModule } from '@angular/material';
 
 // componentes
 import { AppComponent } from './app.component';
@@ -18,6 +23,13 @@ import { YourEventsComponent } from './popUp/your-events/your-events.component';
 import { YourPlaceComponent } from './popUp/your-place/your-place.component';
 import { UploadPhotoComponent } from './popUp/upload-photo/upload-photo.component';
 import { EditProfileComponent } from './popUp/edit-profile/edit-profile.component';
+import { CheckDataComponent } from './popUp/check-data/check-data.component';
+import { SplashComponent } from './views/splash/splash.component';
+import { SignUpComponent } from './views/sign-up/sign-up.component';
+import { CreateAccountNameWorkComponent } from './popUp/create-account-name-work/create-account-name-work.component';
+import { FormUploadComponent } from './views/upload/form-upload/form-upload.component';
+import { ListUploadComponent } from './views/upload/list-upload/list-upload.component';
+import { DetailsUploadComponent } from './views/upload/details-upload/details-upload.component';
 
 // Firebase
 import { AngularFireDatabaseModule } from "@angular/fire/database"
@@ -26,13 +38,10 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+
+// Services
 import { AuthService } from './services/auth.service';
-import { CreateAccountNameWorkComponent } from './popUp/create-account-name-work/create-account-name-work.component';
-import {EventService} from './services/event.service';
-import { FormUploadComponent } from './views/upload/form-upload/form-upload.component';
-import { ListUploadComponent } from './views/upload/list-upload/list-upload.component';
-import { DetailsUploadComponent } from './views/upload/details-upload/details-upload.component';
-import { CheckDataComponent } from './popUp/check-data/check-data.component';
+import { EventService } from './services/event.service';
 import { NavbarComponent } from './views/navbar/navbar.component';
 
 @NgModule({
@@ -53,6 +62,9 @@ import { NavbarComponent } from './views/navbar/navbar.component';
     UploadPhotoComponent,
     EditProfileComponent,
     CreateAccountNameWorkComponent,
+    CheckDataComponent,
+    SplashComponent,
+    SignUpComponent,
     FormUploadComponent,
     ListUploadComponent,
     DetailsUploadComponent,
@@ -62,12 +74,29 @@ import { NavbarComponent } from './views/navbar/navbar.component';
   imports: [
     BrowserModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatListModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    RouterModule.forRoot([
+      { path: 'SignUp', component: SignUpComponent },
+      { path: 'Splash', component: SplashComponent },
+      { path: '', redirectTo: 'Splash', pathMatch: 'full' },
+      { path: '**', redirectTo: 'Splash', pathMatch: 'full' }
+    ])
+  ],
+  exports: [
+    MatToolbarModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatListModule
   ],
   providers: [AuthService, EventService],
   bootstrap: [AppComponent]

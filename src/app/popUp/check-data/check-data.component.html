@@ -1,3 +1,10 @@
-<p>
-  check-data works!
-</p>
+<div (ngSubmit)="submit()">
+  <input type="checkbox" [(ngModel)]="miVariable" (fun)="" name="casa" />
+
+  <br /> <!-- Salto de linea -->
+
+  miVariable ahora es <b>{{miVariable}}</b>
+  <br>
+
+  <button type="submit" class="btn btn-primary">Continuar</button>
+</div>
