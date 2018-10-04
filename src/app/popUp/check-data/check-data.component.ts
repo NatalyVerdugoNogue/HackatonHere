@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, FormArray, FormControl, ValidatorFn } from '@angular/forms';
+
 
 @Component({
   selector: 'app-check-data',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckDataComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private formBuilder: FormBuilder) {
+
+  }
 
   ngOnInit() {
   }
+
+  // createCheck() {
+  //   this.form = this.formBuilder.group({
+  //     Informática: [''],
+  //     Alimentos: [''],
+  //     ServiciosFinancieros: [''],
+  //     Transporte: [''],
+  //     SaludyFarmaceutica: [''],
+  //     Otros: ['']
+  //   });
+  // }
+
 
 }
