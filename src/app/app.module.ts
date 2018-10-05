@@ -101,7 +101,7 @@ import { LocationComponent } from './popUp/location/location.component';
       { path: 'splash', component: SplashComponent },
       { path: 'terminos', component: AcceptTermsComponent },
       { path: 'crear-cuenta', component: CreateAccountComponent },
-      { path: 'nombre', component: CreateAccountNameWorkComponent },
+      { path: 'proyecto', component: CreateAccountNameWorkComponent },
       { path: 'check', component: CheckDataComponent },
       { path: 'ubicacion', component: LocationComponent },
       { path: 'intro', component: IntroComponent },
