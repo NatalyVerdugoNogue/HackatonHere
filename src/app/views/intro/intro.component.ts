@@ -14,7 +14,7 @@ export class IntroComponent implements OnInit {
   }
 
   muro() {
-    this.router.navigate(['/map']);
+    this.router.navigate(['/inicio']);
   }
 
 }

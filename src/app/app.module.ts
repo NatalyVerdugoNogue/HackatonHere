@@ -111,7 +111,7 @@ import { LocationComponent } from './popUp/location/location.component';
       { path: 'eventos', component: EventsComponent },
       { path: '', redirectTo: 'splash', pathMatch: 'full' },
       { path: '**', redirectTo: 'splash', pathMatch: 'full' },
-      { path: 'map', component: InputMapComponent },
+      { path: 'inicio', component: InputMapComponent },
     ])
   ],
   exports: [

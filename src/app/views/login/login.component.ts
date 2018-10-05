@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   onLogin() {
     this.loginFirebase.login(this.loginForm.value.email, this.loginForm.value.password)
       .then(() => {
-        this.router.navigate(['/map']);
+        this.router.navigate(['/inicio']);
 
       })
       .catch(() => {
