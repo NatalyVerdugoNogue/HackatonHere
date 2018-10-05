@@ -21,10 +21,12 @@ export class SplashComponent implements OnInit {
     this.firebaseAuth.user.subscribe(user => {
       if (user === null) {
         this.router.navigate(['/terminos']);
-      } else {
-        this.router.navigate(['/map']);
+        // } else {
+        //   this.router.navigate(['/terminos']);
+        // }
       }
     })
   }
+
 
 }

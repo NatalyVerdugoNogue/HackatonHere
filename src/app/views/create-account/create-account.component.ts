@@ -37,7 +37,6 @@ export class CreateAccountComponent implements OnInit {
           this.createAccountForm.value.name,
           this.createAccountForm.value.email,
           info.user.uid);
-        console.log(info);
 
         this.router.navigate(['/nombre-proyecto']);
       }
@@ -48,7 +47,7 @@ export class CreateAccountComponent implements OnInit {
           this.router.navigate(['/crear-cuenta']);
         }
       )
-    this.router.navigate(['/nombre-proyecto']);
+    // this.router.navigate(['/nombre-proyecto']);
   }
 
   return() {

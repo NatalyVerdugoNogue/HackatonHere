@@ -24,6 +24,7 @@ export class ProyectNameComponent implements OnInit {
 
   ngOnInit() {
     this.firebaseAuth.user.subscribe(user => {
+      console.log('USER: ', user)
       this.uid = user.uid;
     });
 
