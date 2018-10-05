@@ -1,14 +1,13 @@
 <app-navbar></app-navbar>
-<ng-container *ngFor="let evento of eventosArray" class="container">
-  <div class="card" style="width: 18rem;" *ngIf="evento.favorite">
-      <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
-      <div class="card-body"  >
-            <h3 class="card-title">{{evento.nombreEvento}}</h3>
-            <h4 class="card-title"> {{evento.lugar}}</h4>
-            <h5 class="card-subtitle mb-2 text-muted">{{evento.fecha}}{{evento.horario}}</h5>
-            <p class="card-text">{{evento.descripcion}}</p>
-          </div>
-    </div>
-  </ng-container>
-  
-  
+      <ng-container *ngFor="let evento of eventosArray">
+          <div class="card "  *ngIf="evento.favorite">
+              <div class="card-body"  >
+                    <h3 class="card-title">{{evento.nombreEvento}}</h3>
+                    <p class="card-text">{{evento.descripcion}}</p>
+                    <h5 class="card-subtitle">{{evento.fecha}}{{evento.horario}}{{evento.lugar}}</h5>
+                  <div class="like">
+                    <button class=" btn btn-outline-info favorito" (click)="addFavorite(evento.$key, evento.favorite)"><i class="fas fa-heart float-right"></i></button>
+                  </div>
+              </div>
+            </div>
+          </ng-container>
