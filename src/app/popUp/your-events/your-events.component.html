@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <ng-container *ngFor="let evento of eventosArray" class="container">
   <div class="card" style="width: 18rem;" *ngIf="evento.favorite">
       <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
@@ -6,7 +7,6 @@
             <h4 class="card-title"> {{evento.lugar}}</h4>
             <h5 class="card-subtitle mb-2 text-muted">{{evento.fecha}}{{evento.horario}}</h5>
             <p class="card-text">{{evento.descripcion}}</p>
-            <button class="btn btn-outline-info" (click)="addAssistance(evento.$key, evento.asistire)" *ngIf="evento.asistire">Asistire</button>
           </div>
     </div>
   </ng-container>

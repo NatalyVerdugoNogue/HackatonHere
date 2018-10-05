@@ -65,11 +65,7 @@ i{
   .no-shadow {
     box-shadow: none !important;
   }
-  
-  ::ng-deep .mat-expansion-panel-body {
-    padding: 0px !important;
-    padding-left: 100px !important;
-  }
+ 
   
   .header-box-shadow {
     background-color: #00D4B3;
@@ -83,10 +79,9 @@ i{
   
   .bottom-to-top {
     border: 0px;
-    border-right: 1px;
     border-style: solid;
     border-image:
-    linear-gradient(to top, #c1c1c1, rgba(0, 0, 0, 0)) 1 100%
+    linear-gradient(to top, #c1c1c1, rgba(0, 0, 0, 0)) 1 100%;
   }
   
   .imgIcon{
@@ -95,4 +90,12 @@ i{
   }
   .premiumIcon{
     margin-right: 5%;
+  }
+  mat-sidenav-container{
+    margin: 0%;
+    padding: 0%;
+  }
+  .form-horizontal .form-group {
+    margin-right: -15px;
+    margin-left: -15px;
   }

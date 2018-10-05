@@ -1,3 +1,25 @@
 .card{
     margin: 5%;
 }
+h3, h4, h5{
+    font-family: 'Roboto', 'sans-serif';
+}
+h3{
+    color: #00D4B3;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+h4{
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 24px;
+}
+h5{
+    font-size: 14px;
+    line-height: 16px;
+}
+.asistire, .favorito, .basura, .editar{
+    border: none;
+}

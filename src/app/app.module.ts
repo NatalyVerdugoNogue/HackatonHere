@@ -105,6 +105,8 @@ import { NavbarComponent } from './views/navbar/navbar.component';
       { path: 'Guardados', component: YourEventsComponent },
       { path: 'Perfil', component: ViewProfileComponent },
       { path: 'Eventos', component: EventsComponent },
+      { path: 'Premium', component: SubscribeComponent },
+
     ])
   ],
   exports: [
