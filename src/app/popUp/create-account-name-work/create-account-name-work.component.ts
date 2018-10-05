@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { ProfileService } from '../../services/profile.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class CreateAccountNameWorkComponent implements OnInit {
   infoUser: any;
   @Input() dataUser: any;
 
-  constructor(private formBuilder: FormBuilder, private firebaseAuth: AuthService, private firestore: ProfileService) {
+  constructor(private formBuilder: FormBuilder, private firebaseAuth: AuthService, private firestore: ProfileService, private router: Router) {
     this.addCreateAccountWorkForm();
   }
 
@@ -46,6 +47,11 @@ export class CreateAccountNameWorkComponent implements OnInit {
   onRegisterWork() {
     this.firestore.addNameWork(this.createAccountWorkForm.value.nameWork, this.uid);
     this.createAccountWorkForm.reset();
+    this.router.navigate(['/check']);
+  }
+
+  return() {
+    this.router.navigate(['/crear-cuenta']);
   }
 
 }

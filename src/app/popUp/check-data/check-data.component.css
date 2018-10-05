@@ -1,0 +1,73 @@
+.hed-text {
+  font-family: 'Roboto', 'sans-serif';
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+header {
+  background-color: #00D4B3;
+  height: 10vh;
+}
+
+.hed-btn {
+  background: transparent;
+  border: none;
+}
+
+.hed-i {
+  color: #ffffff;
+  font-size: 25px;
+}
+
+.btn-primary {
+  background: #00D4B3;
+  border-radius: 73px;
+  color: #ffffff;
+  font-family: 'Roboto', 'sans-serif';
+  font-size: 14px;
+  font-weight: 500;
+  border: solid 2px #00D4B3;
+  height: 7vh;
+}
+
+.btn-primary:disabled {
+  background: #ffffff;
+  color: #00D4B3;
+  border: solid 2px #00D4B3;
+}
+
+.name-text {
+  font-family: 'Roboto', 'sans-serif';
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.sect-text {
+  font-family: 'Roboto', 'sans-serif';
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+input[type=checkbox], input[type=radio] {
+  width: 24px;
+  height: 24px;
+}
+
+@media (min-width:1140px) {
+  .btn-primary {
+    font-size: 20px;
+  }
+  .hed-text {
+    font-size: 30px;
+  }
+  .hed-i {
+    font-size: 35px;
+  }
+  .name-text {
+    font-size: 30px;
+  }
+  .sect-text {
+    font-size: 25px;
+  }
+}

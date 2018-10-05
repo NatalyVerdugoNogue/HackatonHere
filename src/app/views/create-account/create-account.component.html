@@ -1,13 +1,33 @@
-<form [formGroup]="createAccountForm" (ngSubmit)="onRegister()">
-  <div class="form-group">
-    <input #name type="text" class="form-control" placeholder="Nombre y Apellido" formControlName="name">
+<header class="pb-xl-5">
+  <div class="row m-0">
+    <div class="col-2 col-xl-1 p-3 p-xl-4 pl-xl-5">
+      <button type="submit" class="hed-btn" (click)="return()">
+        <i class="fas fa-arrow-left hed-i"></i>
+      </button>
+    </div>
+    <div class="col-10 p-0 pt-3 pt-xl-4">
+      <p class="hed-text">Bienvenido, ¿cómo te llamas?</p>
+    </div>
   </div>
-  <div class="form-group">
-    <input #email type="text" class="form-control" placeholder="Correo electrónico" formControlName="email">
+</header>
+<form [formGroup]="createAccountForm" class="pt-xl-5" (ngSubmit)="onRegister()">
+  <div class="col-10 col-xl-5 m-auto pt-5 pb-xl-5">
+    <div class="form-group">
+      <input #name type="text" class="form-control" placeholder="Nombre y Apellido" formControlName="name">
+    </div>
   </div>
-  <div class="form-group">
-    <input #password type="password" class="form-control" placeholder="Contraseña" formControlName="password">
+  <div class="col-10 col-xl-5 m-auto pt-3 pb-xl-5">
+    <div class="form-group">
+      <input #email type="text" class="form-control" placeholder="Correo electrónico" formControlName="email">
+    </div>
+  </div>
+  <div class="col-10 col-xl-5 m-auto pt-3 pb-xl-5">
+    <div class="form-group">
+      <input #password type="password" class="form-control" placeholder="Contraseña" formControlName="password">
+    </div>
+  </div>
+  <div class="col-7 col-xl-2 m-auto pt-3 px-0">
+    <button type="submit" class="col-12 btn btn-primary" [disabled]="!createAccountForm.valid">CONTINUAR</button>
   </div>
 
-  <button type="submit" class="btn btn-primary" [disabled]="!createAccountForm.valid">Continuar</button>
 </form>

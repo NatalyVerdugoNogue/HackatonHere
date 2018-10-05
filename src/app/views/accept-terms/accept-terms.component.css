@@ -1,4 +1,4 @@
-::ng-deep body {
+.con-body {
   background-image: linear-gradient(180deg, #00D4B3 0%, #00A39C 56.67%, #017085 100%);
   background-size: cover;
   background-repeat: no-repeat;
@@ -36,4 +36,83 @@
   line-height: normal;
   font-size: 12px;
   text-align: center;
+  color: #FFFFFF;
+}
+
+.carousel-inner {
+  height: 14vh;
+}
+
+.btn:disabled {
+  background: transparent;
+  border: solid 2px #ffffff;
+  border-radius: 73px;
+  color: #ffffff;
+  font-family: 'Roboto', 'sans-serif';
+  font-weight: 500
+}
+
+.mar-top {
+  padding-top: 12vh;
+}
+
+.style-hr {
+  background: #ffffff;
+}
+
+.singup-text {
+  color: #ffffff;
+  font-family: 'Roboto', 'sans-serif';
+  font-size: 14px;
+}
+
+.singup-btn {
+  color: #ffffff;
+  font-family: 'Roboto', 'sans-serif';
+  font-size: 17px;
+  background: transparent;
+  border: none;
+  font-weight: 600;
+}
+
+a {
+  color: #ffffff;
+  font-weight: 900;
+  text-decoration: underline rgba(255, 255, 255, 0.8);
+}
+
+.btn {
+  background: #ffffff;
+  border: solid 2px #ffffff;
+  border-radius: 73px;
+  color: #017085;
+  font-family: 'Roboto', 'sans-serif';
+  font-size: 14px;
+  font-weight: 500
+}
+
+input[type=checkbox], input[type=radio] {
+  width: 20px;
+  height: 20px;
+}
+
+@media (min-width:1140px) {
+  .btn {
+    font-size: 20px;
+  }
+  .singup-text {
+    font-size: 18px;
+  }
+  .singup-btn {
+    font-size: 20px;
+  }
+  .text-input {
+    font-size: 18px;
+  }
+  .text {
+    font-size: 30px;
+  }
+  .mar-res {
+    padding-top: 5rem!important;
+  }
 }

@@ -1,8 +1,32 @@
+<header class="pb-xl-5">
+  <div class="row m-0">
+    <div class="col-2 col-xl-1 p-3 p-xl-4 pl-xl-5">
+      <button type="submit" class="hed-btn" (click)="return()">
+        <i class="fas fa-arrow-left hed-i"></i>
+      </button>
+    </div>
+    <div class="col-10 p-0 pt-3 pt-xl-4">
+      <p class="hed-text">¡Bacán el nombre!</p>
+    </div>
+  </div>
+</header>
+
+<div class="col-10 col-xl-5 m-auto pt-4 pb-xl-5">
+  <p class="text-center name-text">¿En qué sector económico está tu emprendimiento, empresa o strartup?</p>
+</div>
+
+
 <form [formGroup]="form" (ngSubmit)="submit()">
-  <label formArrayName="orders" *ngFor="let order of form.controls.orders['controls']; let i = index">
-    <input type="checkbox" [formControlName]="i">
-    {{orders[i].name}}
-  </label>
-  <br>
-  <button [disabled]="!form.valid">submit</button>
+  <div class="row m-0">
+    <label class="col-10 col-xl-7 m-auto" formArrayName="orders" *ngFor="let order of form.controls.orders['controls']; let i = index">
+      <div class="row m-0 pt-3">
+        <img src="{{orders[i].img}}" class="img-fluid col-2 px-2 px-xl-5 my-2" alt="icon">
+        <div class="col-7 mt-2 sect-text">{{orders[i].name}}</div>
+        <input class="col-2 mt-3" type="checkbox" [formControlName]="i">
+      </div>
+    </label>
+  </div>
+  <div class="col-7 col-xl-2 m-auto pt-3 pt-xl-5 px-0">
+    <button class="col-12 btn btn-primary" [disabled]="!form.valid">CONTINUAR</button>
+  </div>
 </form>

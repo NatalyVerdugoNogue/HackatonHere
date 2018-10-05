@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 import { ProfileService } from '../../services/profile.service';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-check-data',
@@ -15,15 +16,15 @@ export class CheckDataComponent implements OnInit {
   dataUser: any;
 
   orders = [
-    { id: 100, name: 'Informática' },
-    { id: 200, name: 'Alimentos' },
-    { id: 300, name: 'Salud y Farmacéutica' },
-    { id: 400, name: 'Servicios financieros' },
-    { id: 500, name: 'Transporte' },
-    { id: 600, name: 'Otros' },
+    { id: 100, name: 'Informática', img: "../../../assets/img/informatica.png" },
+    { id: 200, name: 'Alimentos', img: "../../../assets/img/alimentos.png" },
+    { id: 300, name: 'Salud y Farmacéutica', img: "../../../assets/img/salud.png" },
+    { id: 400, name: 'Servicios financieros', img: "../../../assets/img/serviciosfinancieros.png" },
+    { id: 500, name: 'Transporte', img: "../../../assets/img/transportes.png" },
+    { id: 600, name: 'Otros', img: "../../../assets/img/otros.png" },
   ];
 
-  constructor(private formBuilder: FormBuilder, private addFirestore: ProfileService, private firebaseAuth: AuthService) {
+  constructor(private formBuilder: FormBuilder, private addFirestore: ProfileService, private firebaseAuth: AuthService,private router: Router) {
 
     const controls = this.orders.map(c => new FormControl(false));
 
@@ -44,5 +45,10 @@ export class CheckDataComponent implements OnInit {
       .filter(v => v !== null);
 
     this.addFirestore.addAreasInterest(selectedOrderIds, this.uid);
+    this.router.navigate(['/ubicacion']);
+  }
+
+  return() {
+    this.router.navigate(['/nombre']);
   }
 }

@@ -48,6 +48,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthService } from './services/auth.service';
 import { EventService } from './services/event.service';
 import { AcceptTermsComponent } from './views/accept-terms/accept-terms.component';
+import { LocationComponent } from './popUp/location/location.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { AcceptTermsComponent } from './views/accept-terms/accept-terms.componen
     CheckDataComponent,
     NavbarComponent,
     HereMapComponent,
-    InputMapComponent
+    InputMapComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,
@@ -98,7 +100,12 @@ import { AcceptTermsComponent } from './views/accept-terms/accept-terms.componen
     RouterModule.forRoot([
       { path: 'splash', component: SplashComponent },
       { path: 'terminos', component: AcceptTermsComponent },
-      { path: 'signUp', component: SignUpComponent },
+      { path: 'crear-cuenta', component: CreateAccountComponent },
+      { path: 'nombre', component: CreateAccountNameWorkComponent },
+      { path: 'check', component: CheckDataComponent },
+      { path: 'ubicacion', component: LocationComponent },
+      { path: 'intro', component: IntroComponent },
+      { path: 'login', component: LoginComponent },
       { path: 'guardados', component: YourEventsComponent },
       { path: 'perfil', component: ViewProfileComponent },
       { path: 'eventos', component: EventsComponent },

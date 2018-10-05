@@ -1,3 +1,43 @@
-<p>
-  login works!
-</p>
+<div class="con-body">
+
+  <!-- imagen logo -->
+  <div class="row m-0 pt-5 mar-res">
+    <div class="col-7 m-auto text-center">
+      <img src="../../../assets/img/Logo-Splash.png" class="img-fluid img-splash" alt="Responsive image">
+    </div>
+  </div>
+
+  <!-- formulario -->
+  <form [formGroup]="loginForm" class="pt-5" (ngSubmit)="onLogin()">
+    <div class="col-10 col-xl-5 m-auto pt-3 pb-xl-5">
+      <div class="form-group">
+        <input #email type="text" class="form-control" placeholder="Correo electrónico" formControlName="email">
+      </div>
+    </div>
+    <div class="col-10 col-xl-5 m-auto pt-3 pb-xl-5">
+      <div class="form-group">
+        <input #password type="password" class="form-control" placeholder="Contraseña" formControlName="password">
+      </div>
+    </div>
+    <!-- btn crear cuenta -->
+    <div class="row m-0 mt-5">
+      <div class="col-7 col-xl-2 m-auto pt-3 px-0">
+        <button type="submit" class="btn col-12" [disabled]="!loginForm.valid">INGRESAR</button>
+      </div>
+    </div>
+
+  </form>
+
+  <!-- btn ingresa aqui -->
+  <div class="row m-0 mt-3 pt-5">
+    <div class="col-auto m-auto">
+      <p class="singup-text m-0">¿No tienes una cuenta?</p>
+    </div>
+  </div>
+  <div class="row m-0">
+    <div class="col-auto m-auto">
+      <button type="submit" class="singup-btn p-0" (click)="createAccount()">Regístrate aquí</button>
+    </div>
+  </div>
+
+</div>
