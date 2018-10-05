@@ -20,13 +20,9 @@ export class SplashComponent implements OnInit {
   cond() {
     this.firebaseAuth.user.subscribe(user => {
       if (user === null) {
-        console.log("null");
-
         this.router.navigate(['/terminos']);
       } else {
-        console.log("a muro");
-
-        // routing a muro
+        this.router.navigate(['/map']);
       }
     })
   }

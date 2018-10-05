@@ -87,7 +87,7 @@ export class HereMapComponent implements OnInit {
       vicinityNoBr: data.vicinity.split("<br/>", 1),
       time: ('Horario: 09:00-14:00'),
     });
-    
+
     this.map.addObject(marker);
   }
 }

@@ -37,8 +37,7 @@ export class CreateAccountComponent implements OnInit {
           this.createAccountForm.value.name,
           this.createAccountForm.value.email,
           info.user.uid);
-
-        this.createAccountForm.reset();
+        console.log(info);
 
         this.router.navigate(['/nombre']);
       }
