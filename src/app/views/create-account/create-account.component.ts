@@ -39,7 +39,7 @@ export class CreateAccountComponent implements OnInit {
           info.user.uid);
         console.log(info);
 
-        this.router.navigate(['/proyecto']);
+        this.router.navigate(['/nombre-proyecto']);
       }
       ).catch(
         error => {
@@ -48,6 +48,7 @@ export class CreateAccountComponent implements OnInit {
           this.router.navigate(['/crear-cuenta']);
         }
       )
+    this.router.navigate(['/nombre-proyecto']);
   }
 
   return() {

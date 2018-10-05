@@ -1,0 +1,31 @@
+<header class="pb-xl-5">
+  <div class="row m-0">
+    <div class="col-2 col-xl-1 p-3 p-xl-4 pl-xl-5">
+      <button type="submit" class="hed-btn" (click)="return()">
+        <i class="fas fa-arrow-left hed-i"></i>
+      </button>
+    </div>
+    <div class="col-10 p-0 pt-3 pt-xl-4">
+      <p class="hed-text" *ngIf="dataUser && dataUser[0].name">¡Hola {{dataUser[0].name}}!</p>
+    </div>
+  </div>
+</header>
+
+
+
+<form [formGroup]="createAccountWorkForm" class="pt-xl-5" (ngSubmit)="onRegisterWork()">
+
+  <div class="col-10 col-xl-5 m-auto pt-5 pb-xl-5">
+    <p class="text-center name-text">¿Cuál es el nombre de tu emprendimiento, empresa o startup?</p>
+  </div>
+
+  <div class="col-10 col-xl-5 m-auto pt-5 pb-xl-5">
+    <div class="form-group">
+      <input #name type="text" class="form-control" placeholder="Nombre emprendimiento" formControlName="nameWork">
+    </div>
+  </div>
+
+  <div class="col-7 col-xl-2 m-auto pt-3 px-0">
+    <button type="submit" class="col-12 btn btn-primary" [disabled]="!createAccountWorkForm.valid">Continuar</button>
+  </div>
+</form>
