@@ -41,7 +41,7 @@ export class NavbarComponent implements OnInit {
   }
 
   map() {
-    this.router.navigate(['/eventos']);
+    this.router.navigate(['/map']);
   }
 
   eventos() {
