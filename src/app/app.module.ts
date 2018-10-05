@@ -48,6 +48,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthService } from './services/auth.service';
 import { EventService } from './services/event.service';
 import { AcceptTermsComponent } from './views/accept-terms/accept-terms.component';
+import { LocationComponent } from './popUp/location/location.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { AcceptTermsComponent } from './views/accept-terms/accept-terms.componen
     CheckDataComponent,
     NavbarComponent,
     HereMapComponent,
-    InputMapComponent
+    InputMapComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,
@@ -96,14 +98,20 @@ import { AcceptTermsComponent } from './views/accept-terms/accept-terms.componen
     MatIconModule,
     MatSnackBarModule,
     RouterModule.forRoot([
-      { path: 'SignUp', component: SignUpComponent },
-      { path: 'Splash', component: SplashComponent },
-      {path: 'map', component: InputMapComponent},
-      { path: '', redirectTo: 'Splash', pathMatch: 'full' },
-      { path: '**', redirectTo: 'Splash', pathMatch: 'full' },
-      { path: 'Guardados', component: YourEventsComponent },
-      { path: 'Perfil', component: ViewProfileComponent },
-      { path: 'Eventos', component: EventsComponent },
+      { path: 'splash', component: SplashComponent },
+      { path: 'terminos', component: AcceptTermsComponent },
+      { path: 'crear-cuenta', component: CreateAccountComponent },
+      { path: 'nombre', component: CreateAccountNameWorkComponent },
+      { path: 'check', component: CheckDataComponent },
+      { path: 'ubicacion', component: LocationComponent },
+      { path: 'intro', component: IntroComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'guardados', component: YourEventsComponent },
+      { path: 'perfil', component: ViewProfileComponent },
+      { path: 'eventos', component: EventsComponent },
+      { path: '', redirectTo: 'splash', pathMatch: 'full' },
+      { path: '**', redirectTo: 'splash', pathMatch: 'full' },
+      { path: 'map', component: InputMapComponent },
     ])
   ],
   exports: [

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { ProfileService } from '../../services/profile.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-account',
@@ -13,7 +14,7 @@ export class CreateAccountComponent implements OnInit {
   createAccountForm: FormGroup;
 
 
-  constructor(private formBuilder: FormBuilder, private signupFirebase: AuthService, private addProfileFirestore: ProfileService) {
+  constructor(private formBuilder: FormBuilder, private signupFirebase: AuthService, private addProfileFirestore: ProfileService, private router: Router) {
     this.createCreateAccountForm();
 
   }
@@ -36,17 +37,21 @@ export class CreateAccountComponent implements OnInit {
           this.createAccountForm.value.name,
           this.createAccountForm.value.email,
           info.user.uid);
+        console.log(info);
 
-        this.createAccountForm.reset();
-
-        // // routing a muro
+        this.router.navigate(['/nombre']);
       }
       ).catch(
         error => {
           console.log("No se creo el perfil correctamente", error);
 
-          // routing a crear Inicio 
+          this.router.navigate(['/crear-cuenta']);
         }
       )
   }
+
+  return() {
+    this.router.navigate(['/terminos']);
+  }
+
 }

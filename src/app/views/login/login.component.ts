@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,28 +10,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  loginForm: FormGroup;
 
-  ngOnInit() {
+  constructor(private formBuilder: FormBuilder, private loginFirebase: AuthService, private router: Router) {
+    this.createLoginForm();
   }
-  // onLogin() {
-  //   this.signupFirebase.login(this.createAccountForm.value.email,
-  //     this.createAccountForm.value.password)
-  //     .then(() => {
 
-  //     })
-  //     .catch(() => {
 
-  //     })
-  // }
 
-  // onLogout() {
-  //   this.signupFirebase.logout()
-  //     .then(() => {
+  ngOnInit() { }
 
-  //     })
-  //     .catch(() => {
+  createLoginForm() {
+    this.loginForm = this.formBuilder.group({
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
+    });
+  }
 
-  //     })
-  // }
+  onLogin() {
+    this.loginFirebase.login(this.loginForm.value.email, this.loginForm.value.password)
+      .then(() => {
+        this.router.navigate(['/map']);
+
+      })
+      .catch(() => {
+        this.loginForm.reset();
+        this.router.navigate(['/login']);
+
+      })
+  }
+
+  createAccount() {
+    this.router.navigate(['/terminos']);
+  }
+
 }

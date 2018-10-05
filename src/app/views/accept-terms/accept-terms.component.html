@@ -1,11 +1,84 @@
-<label>
-  <input type="checkbox" (change)="toggleVisibility($event)">
-  Aceptar Términos y condiciones <a href="">ver</a>
-</label>
+<div class="con-body">
+  <!-- imagen logo -->
+  <div class="row m-0 pt-5 mar-res">
+    <div class="col-7 m-auto text-center">
+      <img src="../../../assets/img/Logo-Splash.png" class="img-fluid img-splash" alt="Responsive image">
+    </div>
+  </div>
+
+  <!-- carousel -->
+  <div class="row m-0 pt-4 mar-res">
+    <div class="col-8 m-auto text-center">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+        <ol class="carousel-indicators">
+          <i class="fas fa-circle px-1" data-target="#carouselExampleIndicators" data-slide-to="0"></i>
+          <i class="fas fa-circle px-1" data-target="#carouselExampleIndicators" data-slide-to="1"></i>
+          <i class="fas fa-circle px-1" data-target="#carouselExampleIndicators" data-slide-to="2"></i>
+          <i class="fas fa-circle px-1" data-target="#carouselExampleIndicators" data-slide-to="3"></i>
+          <i class="fas fa-circle px-1" data-target="#carouselExampleIndicators" data-slide-to="4"></i>
+        </ol>
+
+        <div class="carousel-inner">
+          <!-- active -->
+          <div class="carousel-item active">
+
+            <p class="text">Conecta con el ecosistema emprendedor</p>
+          </div>
+          <div class="carousel-item">
+            <p class="text">Encuentra los mejores lugares para trabajar</p>
+          </div>
+          <div class="carousel-item">
+            <p class="text">Crea y ve eventos cercanos</p>
+          </div>
+          <div class="carousel-item">
+            <p class="text">Conecta con emprendedores de tu área</p>
+          </div>
+          <div class="carousel-item">
+            <p class="text">Obtén beneficios exclusivos</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- input -->
+  <div class="row m-0 mar-top">
+    <div class="col-9 m-auto text-center">
+      <div class="checkbox">
+        <input type="checkbox" (change)="toggleVisibility($event)">
+        <label class="m-0 pl-2">
+          <span class="cr text-input">Aceptar Términos y Condiciones <a href="">ver</a></span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- btn crear cuenta -->
+  <div class="row m-0 mt-5">
+    <div class="col-7 col-xl-2 m-auto">
+      <button type="submit" class="btn col-12" [disabled]="!marked" (click)="caccount()">CREA TU CUENTA</button>
+    </div>
+  </div>
+
+  <!-- linea -->
+  <div class="row m-0 mt-3">
+    <div class="col-10 col-xl-6 m-auto pt-xl-4">
+      <hr class="style-hr">
+    </div>
+  </div>
 
 
-<br>
-<button type="submit" class="btn" [disabled]="!marked" (click)="submit()">CREA TU CUENTA</button>
-<br>
-
-<button>Ingresa aquí</button>
+  <!-- btn ingresa aqui -->
+  <div class="row m-0 mt-3">
+    <div class="col-auto m-auto">
+      <p class="singup-text m-0">¿Ya tienes una cuenta?</p>
+    </div>
+  </div>
+  <div class="row m-0">
+    <div class="col-auto m-auto">
+      <button type="submit" class="singup-btn p-0" (click)="login()">Ingresa aquí</button>
+    </div>
+  </div>
+</div>

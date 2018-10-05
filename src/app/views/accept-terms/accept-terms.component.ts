@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../../services/profile.service';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-accept-terms',
@@ -11,7 +12,7 @@ export class AcceptTermsComponent implements OnInit {
 
   marked: boolean = false;
 
-  constructor(private addFirestore: ProfileService, private firebaseAuth: AuthService) {
+  constructor(private addFirestore: ProfileService, private firebaseAuth: AuthService, private router: Router) {
 
   }
 
@@ -21,7 +22,6 @@ export class AcceptTermsComponent implements OnInit {
 
   toggleVisibility(e) {
     this.marked = e.target.checked;
-    console.log(this.marked);
     if (this.marked === false) {
 
       //mensaje debe aceptar para crear 
@@ -29,8 +29,11 @@ export class AcceptTermsComponent implements OnInit {
 
   }
 
-  submit() {
-    // routing a crear cuenta 
+  caccount() {
+    this.router.navigate(['/crear-cuenta']);
+  }
 
+  login() {
+    this.router.navigate(['/login']);
   }
 }
