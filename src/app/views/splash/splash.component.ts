@@ -22,7 +22,7 @@ export class SplashComponent implements OnInit {
       if (user === null) {
         this.router.navigate(['/terminos']);
       } else {
-        this.router.navigate(['/map']);
+        this.router.navigate(['/inicio']);
       }
     })
   }
