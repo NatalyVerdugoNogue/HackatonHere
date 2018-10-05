@@ -39,7 +39,7 @@ export class CreateAccountComponent implements OnInit {
           info.user.uid);
         console.log(info);
 
-        this.router.navigate(['/nombre']);
+        this.router.navigate(['/proyecto']);
       }
       ).catch(
         error => {
