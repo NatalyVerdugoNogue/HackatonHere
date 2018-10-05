@@ -2,19 +2,22 @@ import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { UploadFileService } from '../views/upload/upload-file.service';
 
 declare let H: any;
+interface Card {
+  title: any;
+  vicinityNoBr: any;
+  image: string;
+  time: any;
+}
+
 @Component({
   selector: 'here-map',
   templateUrl: './here-map.component.html',
   styleUrls: ['./here-map.component.css']
 })
+
 export class HereMapComponent implements OnInit {
 
-  cards: string[];
-  
-    public title : any;
-    public vicinityNoBr : any;
-    public image : string;
-    public time: any;
+  cards: Card[] = [];
 
   @ViewChild("map")
   public mapElement: ElementRef;
@@ -73,14 +76,18 @@ export class HereMapComponent implements OnInit {
     });
   }
   private dropMarker(coordinates: any, data: any) {
-    this.image = '../../assets/img/pin2.png';
-    let svgMarkup = this.image;
+    const image = '../../assets/img/pin2.png';
+    let svgMarkup = image;
     let icon = new H.map.Icon(svgMarkup);
     let marker = new H.map.Marker(coordinates, { icon: icon });
-    let vicOne = data.vicinity.split("<br/>" , 1);
-    this.title = data.title;
-    this.vicinityNoBr = vicOne;
-    this.time = ('Horario: 09:00-14:00');
+
+    this.cards.push({
+      image,
+      title: data.title,
+      vicinityNoBr: data.vicinity.split("<br/>", 1),
+      time: ('Horario: 09:00-14:00'),
+    });
+    
     this.map.addObject(marker);
   }
 }
