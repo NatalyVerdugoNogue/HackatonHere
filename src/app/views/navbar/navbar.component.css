@@ -44,6 +44,7 @@ i{
     width: 40vh;
     position: fixed;
     background-color: #ffff;
+    z-index: 2;
   }
   
   .circle {
