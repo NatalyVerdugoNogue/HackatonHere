@@ -109,8 +109,6 @@ import { LocationComponent } from './popUp/location/location.component';
       { path: 'guardados', component: YourEventsComponent },
       { path: 'perfil', component: ViewProfileComponent },
       { path: 'eventos', component: EventsComponent },
-      { path: '', redirectTo: 'splash', pathMatch: 'full' },
-      { path: '**', redirectTo: 'splash', pathMatch: 'full' },
       { path: 'inicio', component: InputMapComponent },
     ])
   ],
