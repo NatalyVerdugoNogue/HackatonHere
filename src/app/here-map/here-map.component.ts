@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { UploadFileService } from '../views/upload/upload-file.service';
+import { FormBuilder } from '@angular/forms';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 declare let H: any;
 interface Card {
@@ -16,7 +18,6 @@ interface Card {
 })
 
 export class HereMapComponent implements OnInit {
-
   cards: Card[] = [];
 
   @ViewChild("map")
