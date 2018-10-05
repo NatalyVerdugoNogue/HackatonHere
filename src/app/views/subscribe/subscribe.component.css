@@ -1,0 +1,81 @@
+.con-body {
+  background-image: linear-gradient(180deg, #00D4B3 0%, #00A39C 56.67%, #017085 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 240vh;
+}
+
+.btn {
+  background: transparent;
+  border: solid 2px #ffffff;
+  border-radius: 73px;
+  color: #ffffff;
+  font-family: 'Roboto', 'sans-serif';
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.text {
+  font-family: 'Roboto', 'sans-serif';
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.text-1 {
+  font-size: 24px;
+}
+
+.text-2 {
+  font-size: 20px;
+}
+
+.text-3 {
+  font-size: 14px;
+}
+
+.hed-text {
+  font-family: 'Roboto', 'sans-serif';
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+header {
+  background-color: #00D4B3;
+  height: 10vh;
+}
+
+.hed-btn {
+  background: transparent;
+  border: none;
+}
+
+.hed-i {
+  color: #ffffff;
+  font-size: 25px;
+}
+
+@media (min-width:1140px) {
+  .text-1 {
+    font-size: 36px;
+  }
+  .text-2 {
+    font-size: 30px;
+  }
+  .text-3 {
+    font-size: 24px;
+  }
+  .btn {
+    font-size: 20px;
+  }
+  .hed-text {
+    font-size: 30px;
+  }
+  .hed-i {
+    font-size: 35px;
+  }
+}

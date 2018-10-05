@@ -24,7 +24,7 @@ export class CheckDataComponent implements OnInit {
     { id: 600, name: 'Otros', img: "../../../assets/img/otros.png" },
   ];
 
-  constructor(private formBuilder: FormBuilder, private addFirestore: ProfileService, private firebaseAuth: AuthService,private router: Router) {
+  constructor(private formBuilder: FormBuilder, private addFirestore: ProfileService, private firebaseAuth: AuthService, private router: Router) {
 
     const controls = this.orders.map(c => new FormControl(false));
 
