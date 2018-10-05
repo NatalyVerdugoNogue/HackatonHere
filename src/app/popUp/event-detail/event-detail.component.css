@@ -11,7 +11,7 @@ h3{
     font-size: 20px;
     line-height: 24px;
 }
-h4{
+.card-text{
     font-weight: 500;
     font-size: 22px;
     line-height: 24px;
@@ -22,4 +22,25 @@ h5{
 }
 .asistire, .favorito, .basura, .editar{
     border: none;
+}
+.fa-heart{
+    color: #7E57C2;
+    text-align: right;
+    margin-left: 8%;
+}
+.fa-check-circle{
+    color: #00D4B3;
+}
+.fa-trash, .fa-pencil-alt{
+    color: rgba(0, 0, 0, 0.54);
+}
+.options{
+    border: none !important;
+    background-color: none !important;
+    text-align: right;
+    margin:  0% 0% 4% 7%;
+}
+.search{
+    margin-top: 18%;
+    margin-left: 5%;
 }
