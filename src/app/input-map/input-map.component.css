@@ -1,10 +1,21 @@
-button{
-  background-color: #00D4B3;
-  border: navy;
-  color: white;
-  width: 20%;
-  margin-left: 5%;
+button {
+  background: #017085;
+  border: solid 2px #017085;
+  border-radius: 73px;
+  color: #ffffff;
+  font-family: 'Roboto', 'sans-serif';
+  font-size: 14px;
+  font-weight: 500
 }
-input{
-  border: navy;
+
+input {
+  border: none;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.38);
+  border-radius: 0;
+  font-size: 16px;
+}
+
+::placeholder {
+  font-family: 'Roboto', 'sans-serif';
+  font-size: 16px;
 }

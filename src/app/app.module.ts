@@ -49,6 +49,7 @@ import { AuthService } from './services/auth.service';
 import { EventService } from './services/event.service';
 import { AcceptTermsComponent } from './views/accept-terms/accept-terms.component';
 import { LocationComponent } from './popUp/location/location.component';
+import { ProyectNameComponent } from './view/proyect-name/proyect-name.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { LocationComponent } from './popUp/location/location.component';
     NavbarComponent,
     HereMapComponent,
     InputMapComponent,
-    LocationComponent
+    LocationComponent,
+    ProyectNameComponent
   ],
   imports: [
     BrowserModule,
@@ -98,10 +100,10 @@ import { LocationComponent } from './popUp/location/location.component';
     MatIconModule,
     MatSnackBarModule,
     RouterModule.forRoot([
+      { path: 'nombre-proyecto', component: ProyectNameComponent },
       { path: 'splash', component: SplashComponent },
       { path: 'terminos', component: AcceptTermsComponent },
       { path: 'crear-cuenta', component: CreateAccountComponent },
-      { path: 'proyecto', component: CreateAccountNameWorkComponent },
       { path: 'check', component: CheckDataComponent },
       { path: 'ubicacion', component: LocationComponent },
       { path: 'intro', component: IntroComponent },
