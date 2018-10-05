@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Subscription } from 'rxjs';
@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit {
   photo: any;
   email: any;
 
-  constructor(private logoutFirebase: AuthService) {
+  constructor(private logoutFirebase: AuthService, private router: Router) {
 
   }
 
@@ -35,7 +35,23 @@ export class NavbarComponent implements OnInit {
     this.logoutFirebase.logout().then(
       info => {
         console.log(info)
+        this.router.navigate(['/']);
       }
     )
+  }
+
+  map() {
+    this.router.navigate(['/map']);
+  }
+
+  eventos() {
+    this.router.navigate(['/eventos']);
+  }
+
+  guardados() {
+    this.router.navigate(['/guardados']);
+  }
+  premium() {
+    this.router.navigate(['/premium']);
   }
 }
