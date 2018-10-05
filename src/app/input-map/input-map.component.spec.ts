@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WallComponent } from './wall.component';
+import { InputMapComponent } from './input-map.component';
 
-describe('WallComponent', () => {
-  let component: WallComponent;
-  let fixture: ComponentFixture<WallComponent>;
+describe('InputMapComponent', () => {
+  let component: InputMapComponent;
+  let fixture: ComponentFixture<InputMapComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WallComponent ]
+      declarations: [ InputMapComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WallComponent);
+    fixture = TestBed.createComponent(InputMapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

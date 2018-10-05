@@ -16,7 +16,6 @@ import { IntroComponent } from './views/intro/intro.component';
 import { LoginComponent } from './views/login/login.component';
 import { CreateAccountComponent } from './views/create-account/create-account.component';
 import { WelcomeComponent } from './views/welcome/welcome.component';
-import { WallComponent } from './views/wall/wall.component';
 import { EventsComponent } from './views/events/events.component';
 import { SubscribeComponent } from './views/subscribe/subscribe.component';
 import { ViewProfileComponent } from './views/view-profile/view-profile.component';
@@ -33,6 +32,9 @@ import { CreateAccountNameWorkComponent } from './popUp/create-account-name-work
 import { FormUploadComponent } from './views/upload/form-upload/form-upload.component';
 import { ListUploadComponent } from './views/upload/list-upload/list-upload.component';
 import { DetailsUploadComponent } from './views/upload/details-upload/details-upload.component';
+import { HereMapComponent } from './here-map/here-map.component';
+import { NavbarComponent } from './views/navbar/navbar.component';
+import { InputMapComponent } from './input-map/input-map.component';
 
 // Firebase
 import { AngularFireDatabaseModule } from "@angular/fire/database"
@@ -47,11 +49,6 @@ import { AuthService } from './services/auth.service';
 import { EventService } from './services/event.service';
 import { AcceptTermsComponent } from './views/accept-terms/accept-terms.component';
 
-
-
-
-import { NavbarComponent } from './views/navbar/navbar.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +56,6 @@ import { NavbarComponent } from './views/navbar/navbar.component';
     LoginComponent,
     CreateAccountComponent,
     WelcomeComponent,
-    WallComponent,
     EventsComponent,
     SubscribeComponent,
     ViewProfileComponent,
@@ -78,7 +74,9 @@ import { NavbarComponent } from './views/navbar/navbar.component';
     DetailsUploadComponent,
     AcceptTermsComponent,
     CheckDataComponent,
-    NavbarComponent
+    NavbarComponent,
+    HereMapComponent,
+    InputMapComponent
   ],
   imports: [
     BrowserModule,
@@ -100,6 +98,7 @@ import { NavbarComponent } from './views/navbar/navbar.component';
     RouterModule.forRoot([
       { path: 'SignUp', component: SignUpComponent },
       { path: 'Splash', component: SplashComponent },
+      {path: 'map', component: HereMapComponent},
       { path: '', redirectTo: 'Splash', pathMatch: 'full' },
       { path: '**', redirectTo: 'Splash', pathMatch: 'full' },
       { path: 'Guardados', component: YourEventsComponent },
