@@ -110,6 +110,8 @@ import { LocationComponent } from './popUp/location/location.component';
       { path: 'perfil', component: ViewProfileComponent },
       { path: 'eventos', component: EventsComponent },
       { path: 'inicio', component: InputMapComponent },
+      { path: '', redirectTo: 'splash', pathMatch: 'full' },
+      { path: '**', redirectTo: 'splash', pathMatch: 'full' },
     ])
   ],
   exports: [
