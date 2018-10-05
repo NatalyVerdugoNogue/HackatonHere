@@ -1,13 +1,9 @@
-<here-map
-    #map
-    appId="VGLR85mWlnbk1IC32Sdf"
-    appCode="B_vLITHwu1cJU6qp1tsBwg"
-    lat="-33.4726900"
-    lng="-70.6472400"
-    width="100%"
-    height="300px">
-</here-map>
+
+<app-navbar></app-navbar>
 <div style="padding: 10px 0">
   <input type="text" placeholder="Buscar lugar" [(ngModel)]="query" />
   <button (click)="map.places(query)">Buscar</button>
 </div>
+<here-map #map appId="VGLR85mWlnbk1IC32Sdf" appCode="B_vLITHwu1cJU6qp1tsBwg" lat="-33.4726900" lng="-70.6472400" width="100%" height="300px "></here-map>
+
+
