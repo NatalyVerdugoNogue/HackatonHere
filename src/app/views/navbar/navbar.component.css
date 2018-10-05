@@ -115,3 +115,7 @@ mat-sidenav-container {
   font-size: 24px;
   font-weight: 500
 }
+
+.fixed-top {
+  z-index: 1000;
+}
