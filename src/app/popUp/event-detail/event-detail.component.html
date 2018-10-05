@@ -1,21 +1,32 @@
-<form class="form-inline">
-    <input class="form-control" name="searchInput" placeholder="Buscar evento" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">
-    <button class="btn btn-outline-primary" (click)="searchText=''">X</button>
+<form class="form-inline search">
+    <input class="form-control" name="searchInput" placeholder="Buscar evento" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 50%;"><i class="fas fa-search"></i>
 </form>
-<ng-container *ngFor="let evento of eventosArray" class="container">
-<div class="card" style="width: 18rem;" *ngIf="filterCondition(evento)">
-    <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
-    <div class="card-body" >
+<ng-container *ngFor="let evento of eventosArray">
+<div class="card "  *ngIf="filterCondition(evento)">
+    <div class="card-body"  >
+            <div class="d-flex flex-row-reverse bd-highlight">
+                    <button class="btn  options p-2 bd-highlight" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                          <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                      <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+          
+                              <button class="btn btn-outline-info editar" (click)="eventService.populateForm(evento)" data-toggle="modal" data-target="#exampleModalLong"><i class="fas fa-pencil-alt"></i></button>
+          
+                              <button class="btn btn-outline-info basura" (click)="onDelete(evento.$key)"><i class="fas fa-trash"></i></button>
+                          </div>
+                      </div>
+                  </div>
           <h3 class="card-title">{{evento.nombreEvento}}</h3>
-          <h4 class="card-title"> {{evento.lugar}}</h4>
-          <h5 class="card-subtitle mb-2 text-muted">{{evento.fecha}}{{evento.horario}}</h5>
           <p class="card-text">{{evento.descripcion}}</p>
-          <button class="btn btn-outline-info" (click)="eventService.populateForm(evento)" href="#collapseExample" data-toggle="collapse">Editar</button>
-          <button class="btn btn-outline-info" (click)="onDelete(evento.$key)">Eliminar</button>
-          <div >
-          <button class="btn btn-outline-info" (click)="addFavorite(evento.$key, evento.favorite)">Favorito</button>
-          <button class="btn btn-outline-info" (click)="addAssistance(evento.$key, evento.asistire)">Asistire {{evento.asistire}}</button>
+          <h5 class="card-subtitle mb-2 text-muted">{{evento.fecha}}{{evento.horario}}{{evento.lugar}}</h5>
+        <div class="d-flex flex-row bd-highlight mb-3">
+          <button class="p-2 bd-highlight btn btn-outline-info asistire" (click)="addAssistance(evento.$key, evento.asistire)"><i class="fas fa-check-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i>Asistiré junto a {{evento.asistire}}</button>
+
+          <button class="p-2 bd-highlight btn btn-outline-info favorito" (click)="addFavorite(evento.$key, evento.favorite)"><i class="far fa-heart float-right"></i></button>
         </div>
+
+        
     </div>
   </div>
 </ng-container>

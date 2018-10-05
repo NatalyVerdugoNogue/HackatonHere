@@ -104,6 +104,8 @@ import { AcceptTermsComponent } from './views/accept-terms/accept-terms.componen
       { path: 'Guardados', component: YourEventsComponent },
       { path: 'Perfil', component: ViewProfileComponent },
       { path: 'Eventos', component: EventsComponent },
+      { path: 'Premium', component: SubscribeComponent },
+
     ])
   ],
   exports: [
